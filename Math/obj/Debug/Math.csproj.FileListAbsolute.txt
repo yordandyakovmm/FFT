@@ -4,3 +4,9 @@ D:\Math\Release\AForge.Math.xml
 D:\Math\Sources\Math\obj\Debug\Math.csprojResolveAssemblyReference.cache
 D:\Math\Sources\Math\obj\Debug\AForge.Math.dll
 D:\Math\Sources\Math\obj\Debug\AForge.Math.pdb
+D:\Release\AForge.Math.dll
+D:\Release\AForge.Math.pdb
+D:\Release\AForge.Math.xml
+D:\FFT\Math\obj\Debug\Math.csprojResolveAssemblyReference.cache
+D:\FFT\Math\obj\Debug\AForge.Math.dll
+D:\FFT\Math\obj\Debug\AForge.Math.pdb
