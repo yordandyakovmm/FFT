@@ -1,0 +1,6 @@
+D:\Math\Release\AForge.Math.dll
+D:\Math\Release\AForge.Math.pdb
+D:\Math\Release\AForge.Math.xml
+D:\Math\Sources\Math\obj\Debug\Math.csprojResolveAssemblyReference.cache
+D:\Math\Sources\Math\obj\Debug\AForge.Math.dll
+D:\Math\Sources\Math\obj\Debug\AForge.Math.pdb

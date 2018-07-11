@@ -1,0 +1,39 @@
+﻿<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<div class="container">
+
+    <span class="red">
+        $F({\color{red}\nu}) = \int_{-\infty}^{\infty}f(t)e^{-2\pi it\nu}d{t}$
+    </span>
+
+
+    <span class=" red">
+        $t(t) = \int_{-\infty}^{\infty}F(\nu)e^{2\pi it\nu}d{\nu}$
+    </span>
+    
+
+</div>
+
+<script type="text/javascript">
+    $('body').keyup(function (e) {
+        if (e.which == 39) {
+            $('body').hide(1000);
+            setTimeout(function () {
+                window.location = "/fourie";
+            }, 1000);
+        }
+        if (e.which == 37) {
+            $('body').hide(1000);
+            setTimeout(function () {
+                window.location = "/";
+            }, 1000);
+        }
+
+    });
+</script>
+<script src="~/Scripts/main.js"></script>

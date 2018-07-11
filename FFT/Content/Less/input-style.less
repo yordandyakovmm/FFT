@@ -1,0 +1,48 @@
+﻿@border-blue-color: rgb(0, 159, 227);
+@blue-color: #009fe3;
+@blue-color-dark: #008fd3;
+@dark-color: rgb(30, 32, 30);
+@button-color: rgb(200, 200, 220);
+@button-hover-color: rgb(240, 240, 240);
+
+#font() {
+    font-family: "PT Sans", sans-serif;
+    color: rgb(20, 26, 48);
+    font-size: 15px;
+    font-weight: 400;
+}
+
+#font-big() {
+    font-family: "PT Sans", sans-serif;
+    color: rgb(20, 26, 48);
+    font-size: 22px;
+    font-weight: 500;
+}
+
+#ifont() {
+    font-family: 'icomoon';
+    font-style: normal;
+    speak: none;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+
+
+input[type="text"], input[type="button"] {
+    width: 180px;
+    padding: 6px 10px 6px 10px;
+    box-sizing: border-box;
+    border: 1px solid @border-blue-color;
+    border-radius: 2px;
+    #font;
+    outline: none;
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 4px @blue-color;
+    }
+}
+

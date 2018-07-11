@@ -1,0 +1,34 @@
+﻿
+<div class="form-content ">
+    <div class="login-form-main" style=" height: calc(100% - (140px));">
+        <form method="post" enctype="multipart/form-data">
+            <div class="header-text">
+                <span>Вход</span>
+            </div>
+            <div>
+                <input type="text" name="Email" placeholder="Емейл" validate />
+            </div>
+            <div>
+                <input type="password" name="Password" placeholder="Име" validate />
+            </div>
+            @if (ViewBag.error != null)
+            {
+                <div class="autentication-error">
+                    Невалиден емейл или парола
+                </div>
+            }
+            <div class="button-div">
+                <div>
+                    <button class="submit-smal" type="submit" keypress="return false" onclick="return validate()">Вход</button>
+                </div>
+
+            </div>
+            <div class="form-row">
+                &nbsp;
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<script src="~/Scripts/form.js"></script>

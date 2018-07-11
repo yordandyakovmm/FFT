@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "Content/css/grid-layout.css",
+    "inputFile": "Content/Less/grid-layout.less"
+  },
+  {
+    "outputFile": "Content/css/input-style.css",
+    "inputFile": "Content/Less/input-style.less"
+  }
+]

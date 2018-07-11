@@ -1,0 +1,27 @@
+﻿<div class="agenda">
+    <span class="heder">Agenda</span>
+
+    <span class="sub-heder-6">Foundament of FFT</span>
+    <span class="sub-heder-6">FFT and DFT</span>
+    <span class="sub-heder-6">Aplications of FFT</span>
+    <span class="sub-heder-6">Demo</span>
+
+</div>
+<script type="text/javascript">
+    $('body').keyup(function (e) {
+        if (e.which == 39) {
+            $('body').hide(1000);
+            setTimeout(function () {
+                window.location = "/foundament";
+            }, 1000);
+        }
+        if (e.which == 37) {
+            $('body').hide(1000);
+            setTimeout(function () {
+                window.location = "/";
+            }, 1000);
+        }
+
+    });
+</script>
+<script src="~/Scripts/main.js"></script>
