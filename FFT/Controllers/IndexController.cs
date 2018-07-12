@@ -148,7 +148,7 @@ namespace AirHelp.Controllers
             }
             else
             {
-                real = double.Parse(com) *  realSing;
+                real = double.Parse(com.Trim('i')) *  realSing;
                 imag = 0;
             }
 
