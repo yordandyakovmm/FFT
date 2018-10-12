@@ -6,6 +6,10 @@
 </div>
 <script type="text/javascript">
     $('body').keyup(function (e) {
+        if (!e.ctrlKey)
+        {
+            return;
+        }
         if (e.which == 39) {
             $('body').hide(1000);
             setTimeout(function () {

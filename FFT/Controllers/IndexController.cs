@@ -94,6 +94,33 @@ namespace AirHelp.Controllers
 
         }
 
+        [Route("fft1")]
+        public ActionResult fft1(string[] json)
+        {
+
+            Complex[] data = new Complex[json.Length];
+            Complex[] fft = new Complex[json.Length];
+            for (int i = 0; i < json.Length; i++)
+            {
+                var com = this.ParceCom(json[i]);
+                data[i] = com;
+            }
+
+            Array.Copy(data, fft, data.Length);
+
+            FourierTransform.DFT(data, FourierTransform.Direction.Backward);
+
+            var result = new
+            {
+                time = data.Select(d => new { real = d.Re, imag = d.Im }).ToArray(),
+                fft = fft.Select(d => new { real = d.Re, imag = d.Im }).ToArray()
+            };
+
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+
+        }
+
 
 
         [HttpGet]
@@ -112,13 +139,18 @@ namespace AirHelp.Controllers
         }
 
         [HttpGet]
-        [Route("democompresion")]
-        public ActionResult DemoCompresion()
+        [Route("dft")]
+        public ActionResult Dft()
         {
-            return View("DemoCompresion");
+            return View("dft");
         }
 
-
+        [HttpGet]
+        [Route("dft1")]
+        public ActionResult Dft1()
+        {
+            return View("dft1");
+        }
 
         private Complex ParceCom(string comlex)
         {
@@ -144,7 +176,7 @@ namespace AirHelp.Controllers
             else if (com.Split('+').Length > 1)
             {
                 real = double.Parse(com.Split('+')[0]) * realSing;
-                imag = double.Parse(com.Split('+')[1].TrimEnd('i')) * (-1);
+                imag = double.Parse(com.Split('+')[1].TrimEnd('i'));
             }
             else
             {
