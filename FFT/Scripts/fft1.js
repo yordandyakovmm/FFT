@@ -16,24 +16,24 @@ function draw(data) {
 
     var ctx = cTime.getContext('2d');
     ctx.beginPath();
-    ctx.moveTo(x(0), y(0));
-    ctx.lineTo(x(660), y(0));
+    ctx.moveTo(xCoard(0), y(0));
+    ctx.lineTo(xCoard(660), y(0));
     ctx.stroke();
 
     for (i = 0; i <= sample; i++) {
 
         ctx.beginPath();
-        ctx.moveTo(x(660 / sample * i), y(10));
-        ctx.lineTo(x(660 / sample * i), y(-10));
+        ctx.moveTo(xCoard(660 / sample * i), y(10));
+        ctx.lineTo(xCoard(660 / sample * i), y(-10));
         ctx.stroke();
         ctx.font = "11px Arial";
-        ctx.fillText((ttime / sample * i).toFixed(2), x(660 / sample * i - 10), y(-25));
+        ctx.fillText((ttime / sample * i).toFixed(2), xCoard(660 / sample * i - 10), y(-25));
 
     }
 
     for (i = 0; i < sample; i++) {
         ctx.beginPath();
-        ctx.arc(x(660 / sample * i), y(time[i].real * 20), 5, 0, 2 * Math.PI, false);
+        ctx.arc(xCoard(660 / sample * i), y(time[i].real * 20), 5, 0, 2 * Math.PI, false);
         ctx.fillStyle = 'red';
         ctx.fill();
     }
@@ -42,8 +42,8 @@ function draw(data) {
 
     var ftx = cFft.getContext('2d');
     ftx.beginPath();
-    ftx.moveTo(x(0), y(0));
-    ftx.lineTo(x(660), y(0));
+    ftx.moveTo(xCoard(0), y(0));
+    ftx.lineTo(xCoard(660), y(0));
     ftx.stroke();
 
 
@@ -57,7 +57,7 @@ function draw(data) {
         even = false;
     }
 
-    $('#freq-container').find('input').each(function (index) {
+    $('#freq-container').find('input[type=text]').each(function (index) {
         drawFFT(index, N, Nmax, even, ftx, data);
     });
 
@@ -183,13 +183,43 @@ function drawGraph()
     $('#freq-container').find('input[type=checkbox]:checked').each(function (index) {
         var $container = $(this).parent().parent();
         var freq = $container.find("input[type=text]").attr('data');
-        var index = $container.find("input[type=text]").attr('id').substring(1)
+        var index = $container.find("input[type=text]").attr('id').substring(1);
         var val = globalData.fft[index];
         selected.push({
             freq : freq,
-            val : val
+            val: val,
+            mod: Math.sqrt(val.real * val.real + val.imag * val.imag),
+            arg : val.real == 0 ? 0 :  Math.atan(val.imag/val.real)
         })
     });
+    
+    // ***************************
+    var x1 = null, y1 = null, x2 = null, y2 = null;
+    var cFft = document.getElementById('ctime');
+    var ftx = cFft.getContext('2d');
+        
+    var time = parseInt($('#time').val());
+    var sample = parseInt($('#sample').val());
+    var countSimpeTime = time / sample;
+    
+    var dimX = 660 / sample;
+    var dimY = 20;
+
+    for (var i = 0; i < 660; i++)
+    {
+        x = i / dimX;
+        y = 0;
+        for (var j = 0; j < selected.length; j++) {
+            var sel = selected[j];
+            y += sel.freq == 0
+                ? sel.mod
+                : sel.mod * Math.sin(x / sel.freq - sel.arg);
+        }
+
+        ftx.fillRect(xCoard(i), y * 20, 1, 1);
+
+    }
+    
     debugger;
 }
 
@@ -275,7 +305,7 @@ function sampleChange() {
 }
 
 
-function x(x) {
+function xCoard(x) {
     return x + 20;
 }
 
