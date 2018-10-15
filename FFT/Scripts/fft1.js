@@ -200,10 +200,10 @@ function drawGraph()
             arg = - Math.atan(Math.abs(val.imag) / Math.abs(val.real))
         }
         else if (val.real < 0 && val.imag > 0) {
-            arg = Math.PI / 2 - Math.atan(Math.abs(val.imag) / Math.abs(val.real));
+            arg = Math.PI - Math.atan(Math.abs(val.imag) / Math.abs(val.real));
         }
         else if (val.real < 0 && val.imag < 0) {
-            arg = -(Math.PI / 2 - Math.atan(Math.abs(val.imag) / Math.abs(val.real)));
+            arg = -(Math.PI - Math.atan(Math.abs(val.imag) / Math.abs(val.real)));
         }
 
         selected.push({
@@ -225,7 +225,6 @@ function drawGraph()
     
     var dimX = 660 / sample;
     var dimY = 20;
-    debugger;
     for (var i = 0; i < 660; i++)
     {
         x = i / dimX;
@@ -233,10 +232,15 @@ function drawGraph()
         for (var j = 0; j < selected.length; j++) {
             var sel = selected[j];
             console.log("arg: ", sel.arg);
-                        
+
+            if (sel.arg == 0 && sel.freq != 0)
+            {
+                debugger;
+            }
+
             y += sel.freq == 0
                 ? sel.mod
-                : sel.mod * 2 * Math.cos( x * 2 * Math.PI * sel.freq + sel.arg);
+                : sel.mod * 2 * Math.cos(x * 2 * Math.PI * sel.freq + sel.arg);
         }
 
         ftx.fillRect(xCoard(i), yCord(y * dimY ), 1, 1);
