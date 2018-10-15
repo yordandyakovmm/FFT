@@ -185,11 +185,32 @@ function drawGraph()
         var freq = $container.find("input[type=text]").attr('data');
         var index = $container.find("input[type=text]").attr('id').substring(1);
         var val = globalData.fft[index];
+        var arg = 0;
+        if (val.real == 0 && val.imag > 0)
+        {
+            arg = Math.PI / 2;
+        }
+        else if (val.real == 0 && val.imag < 0) {
+            arg = - Math.PI / 2;
+        }
+        else if (val.real > 0 && val.imag > 0) {
+            arg = Math.atan(Math.abs(val.imag) / Math.abs(val.real))
+        }
+        else if (val.real > 0 && val.imag < 0) {
+            arg = - Math.atan(Math.abs(val.imag) / Math.abs(val.real))
+        }
+        else if (val.real < 0 && val.imag > 0) {
+            arg = Math.PI / 2 - Math.atan(Math.abs(val.imag) / Math.abs(val.real));
+        }
+        else if (val.real < 0 && val.imag < 0) {
+            arg = -(Math.PI / 2 - Math.atan(Math.abs(val.imag) / Math.abs(val.real)));
+        }
+
         selected.push({
             freq : freq,
             val: val,
             mod: Math.sqrt(val.real * val.real + val.imag * val.imag),
-            arg : val.real == 0 ? 0 :  Math.atan(val.imag/val.real)
+            arg : arg
         })
     });
     
