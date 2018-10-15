@@ -204,23 +204,24 @@ function drawGraph()
     
     var dimX = 660 / sample;
     var dimY = 20;
-
+    debugger;
     for (var i = 0; i < 660; i++)
     {
         x = i / dimX;
         y = 0;
         for (var j = 0; j < selected.length; j++) {
             var sel = selected[j];
+            console.log("arg: ", sel.arg);
+                        
             y += sel.freq == 0
                 ? sel.mod
-                : sel.mod * Math.sin(x / sel.freq - sel.arg);
+                : sel.mod * 2 * Math.cos( x * 2 * Math.PI * sel.freq + sel.arg);
         }
 
-        ftx.fillRect(xCoard(i), y * 20, 1, 1);
+        ftx.fillRect(xCoard(i), yCord(y * dimY ), 1, 1);
 
     }
     
-    debugger;
 }
 
 
@@ -311,6 +312,10 @@ function xCoard(x) {
 
 function x1(x) {
     return x + 350;
+}
+
+function yCord(y) {
+    return 175 - y;
 }
 
 function y(y) {
