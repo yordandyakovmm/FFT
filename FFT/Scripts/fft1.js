@@ -55,12 +55,7 @@ function drawGraph()
         for (var j = 0; j < selected.length; j++) {
             var sel = selected[j];
             console.log("arg: ", sel.arg);
-
-            if (sel.arg == 0 && sel.freq != 0)
-            {
-                debugger;
-            }
-
+                       
             y += sel.freq == 0
                 ? sel.mod
                 : sel.mod * 2 * Math.cos(x * 2 * Math.PI * sel.freq + sel.arg);

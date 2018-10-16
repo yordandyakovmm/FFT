@@ -13,24 +13,24 @@ function draw(data) {
 
     var ctx = cTime.getContext('2d');
     ctx.beginPath();
-    ctx.moveTo(x(0), y(0));
-    ctx.lineTo(x(660), y(0));
+    ctx.moveTo(xCalck(0), yCalck(0));
+    ctx.lineTo(xCalck(660), yCalck(0));
     ctx.stroke();
 
     for (i = 0; i <= sample; i++) {
 
         ctx.beginPath();
-        ctx.moveTo(x(660 / sample * i), y(10));
-        ctx.lineTo(x(660 / sample * i), y(-10));
+        ctx.moveTo(xCalck(660 / sample * i), yCalck(10));
+        ctx.lineTo(xCalck(660 / sample * i), yCalck(-10));
         ctx.stroke();
         ctx.font = "11px Arial";
-        ctx.fillText((ttime / sample * i).toFixed(2), x(660 / sample * i - 10), y(-25));
+        ctx.fillText((ttime / sample * i).toFixed(2), xCalck(660 / sample * i - 10), yCalck(-25));
 
     }
 
     for (i = 0; i < sample; i++) {
         ctx.beginPath();
-        ctx.arc(x(660 / sample * i), y(time[i].real * 20), 5, 0, 2 * Math.PI, false);
+        ctx.arc(xCalck(660 / sample * i), yCalck(time[i].real * 20), 5, 0, 2 * Math.PI, false);
         ctx.fillStyle = 'red';
         ctx.fill();
     }
@@ -39,8 +39,8 @@ function draw(data) {
 
     var ftx = cFft.getContext('2d');
     ftx.beginPath();
-    ftx.moveTo(x(0), y(0));
-    ftx.lineTo(x(660), y(0));
+    ftx.moveTo(xCalck(0), y(0));
+    ftx.lineTo(xCalck(660), y(0));
     ftx.stroke();
 
 
@@ -259,14 +259,14 @@ function sampleChange() {
 }
 
 
-function x(x) {
+function xCalck(x) {
     return x + 20;
 }
 
-function x1(x) {
+function xCalck1(x) {
     return x + 350;
 }
 
-function y(y) {
+function yCalck(y) {
     return 175 - y;
 }
