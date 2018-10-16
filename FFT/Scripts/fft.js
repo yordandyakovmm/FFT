@@ -54,35 +54,25 @@ function draw(data) {
         even = false;
     }
 
-    $('#freq-container').find('input').each(function (index) {
-        drawFFT(index, N, Nmax, even, ftx, data);
+    $('#freq-container').find('input[type=text]').each(function (index) {
+        console.log('index: ' + index);
+
+        drawFFT(index, N, Nmax, even, ftx, data, parseInt($(this).attr('hz')));
     });
 
 
 }
 
 
-function drawFFT(index, N, Nmax, even, ftx, data) {
+function drawFFT(index, N, Nmax, even, ftx, data, hz) {
     var max = 660 / window.data.length;
     var fft = data.fft;
-    var fk = window.data[index].fk;
-    var hz = window.data[index].hz;
-    var color = window.data[index].color;
+     var color = window.data[index].color;
     var ind = window.data[index].index;
-
-    var xNumber = 0;
-    if (index == 0) {
-        xNumber = 0;
-    }
-    else if (index <= Nmax) {
-        xNumber = Nmax - index + 1
-    }
-    else {
-        xNumber = -(index - Nmax) - (even ? 1 : 0);
-    }
-
-    var xx = max * xNumber;
-
+        
+    var xx = max * hz;
+    var ttime = parseInt($('#time').val());
+    var hxText = (hz / ttime).toFixed(2);
     ftx.fillStyle = 'black';
     ftx.beginPath();
     ftx.moveTo(x1(xx), y(10));
@@ -91,7 +81,7 @@ function drawFFT(index, N, Nmax, even, ftx, data) {
 
     ftx.fillStyle = color;
     ftx.font = "11px Arial";
-    ftx.fillText(hz, x1(xx - 5), y(-25));
+    ftx.fillText(hxText, x1(xx - 5), y(-25));
     ftx.beginPath();
     ftx.arc(x1(xx), y(fft[ind].real * 20), 5, 0, 2 * Math.PI, false);
     ftx.fillStyle = 'red';
@@ -99,7 +89,7 @@ function drawFFT(index, N, Nmax, even, ftx, data) {
 
     // add simetric blue point
     if (even && index == N / 2) {
-        var xx = max * (-1);
+        var xx = max * -1 * index;
         ftx.fillStyle = 'black';
         ftx.beginPath();
         ftx.moveTo(x1(xx), y(10));
@@ -108,7 +98,7 @@ function drawFFT(index, N, Nmax, even, ftx, data) {
 
         ftx.fillStyle = color;
         ftx.font = "11px Arial";
-        ftx.fillText(hz, x1(xx - 5), y(-25));
+        ftx.fillText(hxText, x1(xx - 5), y(-25));
         ftx.beginPath();
         ftx.arc(x1(xx), y(fft[ind].real * 20), 5, 0, 2 * Math.PI, false);
         ftx.fillStyle = 'red';
@@ -225,23 +215,26 @@ function sampleChange() {
         var fbase = 2 * Math.PI / sample;
 
         var hz = i / time;
+        var hzHole = i;
 
         var Fk = fbase * i;
         if (Fk > Math.PI) {
             Fk = Fk - 2 * Math.PI;
             hz = (i - sample) / time;
+            hzHole = (i - sample)
         }
 
         Fk = Fk / (2 * Math.PI);
         FkText = Fk.toFixed(2);
-        
+        var HZ = ' 0 Hz';
         if (i == 1) {
             window.max = hz;
         }
         if (Fk == 0)
             FkText = ' 0 Hz';
         else
-            FkText += '  ' + hz.toFixed(2) + ' Hz'
+            FkText += '  ' + hz.toFixed(2) + ' Hz';
+            HZ = hz.toFixed(2) + ' Hz';
 
         var freq = i;
         tempate = tempate.replace('#1#', 'f' + i)
@@ -250,7 +243,8 @@ function sampleChange() {
             .replace('#4#', FkText)
             .replace('#5#', classs)
             .replace('#8#', Fk)
-            .replace('#9#', freq.toFixed(2) + ' hz')
+            .replace('#9#', HZ)
+            .replace('#11#', hzHole)
         $freeContainer.append(tempate);
         window.data.push({
             fk: Fk,
