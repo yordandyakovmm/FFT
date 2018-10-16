@@ -1,5 +1,4 @@
-﻿var max = 660 / window.data.length;
-
+﻿
 function draw(data) {
 
     var ttime = parseInt($('#time').val());
@@ -132,7 +131,7 @@ function fft1() {
         url: '/fft1',
         data: { json: data },
         success: function (data) {
-            debugger;
+            globalData = data;
             for (var i = 0; i < data.fft.length; i++) {
                 var $i = $('#t' + i);
                 $i.data.real = data.time[i].real;
@@ -162,7 +161,7 @@ function fft() {
         url: '/fft',
         data: { json: data },
         success: function (data) {
-
+            globalData = data;
             for (var i = 0; i < data.fft.length; i++) {
                 var $i = $('#f' + i);
                 $i.data.real = data.fft[i].real;
@@ -224,15 +223,18 @@ function sampleChange() {
         }
 
         var fbase = 2 * Math.PI / sample;
+
+        var hz = i / time;
+
         var Fk = fbase * i;
         if (Fk > Math.PI) {
             Fk = Fk - 2 * Math.PI;
+            hz = (i - sample) / time;
         }
-
 
         Fk = Fk / (2 * Math.PI);
         FkText = Fk.toFixed(2);
-        var hz = 1 / (Fk * time);
+        
         if (i == 1) {
             window.max = hz;
         }
@@ -241,12 +243,14 @@ function sampleChange() {
         else
             FkText += '  ' + hz.toFixed(2) + ' Hz'
 
-        var freq = (1 / time) * i;
+        var freq = i;
         tempate = tempate.replace('#1#', 'f' + i)
             .replace('#3#', freq.toFixed(2) + ' hz')
             .replace('#2#', 0)
             .replace('#4#', FkText)
-            .replace('#5#', classs);
+            .replace('#5#', classs)
+            .replace('#8#', Fk)
+            .replace('#9#', freq.toFixed(2) + ' hz')
         $freeContainer.append(tempate);
         window.data.push({
             fk: Fk,
