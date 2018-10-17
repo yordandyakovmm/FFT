@@ -139,6 +139,13 @@ namespace AirHelp.Controllers
         }
 
         [HttpGet]
+        [Route("fftDemo")]
+        public ActionResult fftDemo()
+        {
+            return View("fft");
+        }
+
+        [HttpGet]
         [Route("dft")]
         public ActionResult Dft()
         {

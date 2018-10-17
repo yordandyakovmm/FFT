@@ -375,6 +375,15 @@
     <Content Include="Scripts\ConfirmClaim.js" />
     <Content Include="Scripts\fft1.js" />
     <Content Include="Scripts\fft.js" />
+    <Content Include="Scripts\p5\addons\p5.dom.js" />
+    <Content Include="Scripts\p5\addons\p5.dom.min.js" />
+    <Content Include="Scripts\p5\addons\p5.sound.js" />
+    <Content Include="Scripts\p5\addons\p5.sound.min.js" />
+    <Content Include="Scripts\p5\empty-example\index.html" />
+    <Content Include="Scripts\p5\empty-example\sketch.js" />
+    <Content Include="Scripts\p5\p5.js" />
+    <Content Include="Scripts\p5\p5.min.js" />
+    <Content Include="Scripts\p5\p5.pre-min.js" />
     <Content Include="Scripts\Signiture.js" />
     <Content Include="Scripts\RegisterUser.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
@@ -425,6 +434,7 @@
     <Content Include="Views\Index\foundament.cshtml" />
     <Content Include="Views\Index\Dft.cshtml" />
     <Content Include="Views\Index\Dft1.cshtml" />
+    <Content Include="Views\Index\fft.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -1,0 +1,154 @@
+﻿<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script src="~/Scripts/p5/p5.js"></script>
+<script src="~/Scripts/p5/addons/p5.sound.js"></script>
+<div class="container">
+
+
+    <div class="main-grid">
+
+
+        <div class="grid">
+
+            <input type="button" id="record" onclick="record($(this))"  value="start" />
+
+        </div>
+        <div class="convas-grid">
+            Sound
+            <div id="sound-holder" class="convas-holder">
+
+            </div>
+            <script type="text/javascript">
+               
+                
+
+            </script>
+
+            FFT
+            <div id="holder-fft" class="convas-holder">
+
+            </div>
+            <script type="text/javascript">
+
+                var sound = function (p) {
+
+                    var mic, fft, recorder, soundFile;
+                    var data = [];
+                    for (var i = 1; i < 710; i++)
+                    {
+                        data.push(300);
+                    }
+                    p.setup = function () {
+                        p.createCanvas(710, 400);
+                        p.noFill();
+
+                        mic = new p5.AudioIn();
+                        mic.start();
+
+                        recorder = new p5.SoundRecorder();
+                        recorder.setInput(mic);
+
+                        // create an empty sound file that we will use to playback the recording
+                        soundFile = new p5.SoundFile();
+
+                        window.soundFile = soundFile;
+                        window.recorder = recorder;
+                        window.p = p;
+                    };
+                    
+                    p.draw = function () {
+                        var val = mic.getLevel();
+                        data.push(val * 255 + Math.random() * 5);
+                        data.push(val * 255 + Math.random() * 5);
+                        //console.log(mic.getLevel());
+                        if (data.length > 710)
+                        {
+                            data = data.splice(3, 710);
+                        }
+                        p.background(400);
+                        p.beginShape();
+                        for (i = 0; i < data.length; i++) {
+                            p.vertex(i, p.map(data[i], 0, 255, p.height, 0));
+                        }
+                        p.endShape();
+                    };
+
+                };
+
+                var fft = function (p) {
+
+                    var mic, fft;
+                    p.setup = function ()
+                    {
+                        p.createCanvas(710, 400);
+                        p.noFill();
+
+                        mic = new p5.AudioIn();
+                        mic.start();
+                        fft = new p5.FFT();
+                        fft.setInput(mic);
+
+                    };
+
+                    p.draw = function()
+                    {
+                        p.background(400);
+
+                        var spectrum = fft.analyze();
+
+                        p.beginShape();
+                        for (i = 0; i < spectrum.length; i++) {
+                            p.vertex(i, p.map(spectrum[i], 0, 255, p.height, 0));
+                        }
+                        p.endShape();
+                    };
+                    
+                };
+                new p5(fft, 'holder-fft');
+                new p5(sound, 'sound-holder');
+                
+                function record($this)
+                {
+                    if ($this.val() == "start") {
+                        window.recorder.record(window.soundFile);
+                        $this.val('record');
+                    }
+                    else {
+                        window.recorder.stop();
+                        window.p.saveSound(window.soundFile, 'fft-demo.wav');
+                        $this.val('start');
+                    }
+                }
+
+            </script>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+    $('body').keyup(function (e) {
+        if (e.which == 39) {
+            $('body').hide(1000);
+            setTimeout(function () {
+                window.location = "/fourie";
+            }, 1000);
+        }
+        if (e.which == 37) {
+            $('body').hide(1000);
+            setTimeout(function () {
+                window.location = "/";
+            }, 1000);
+        }
+
+    });
+</script>
+<script src="~/Scripts/main.js"></script>
