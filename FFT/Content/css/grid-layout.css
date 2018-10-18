@@ -89,6 +89,12 @@ body {
 .main-grid .convas-grid .convas-holder canvas {
   border: 1px solid black;
 }
+.main-grid .convas-title {
+  padding: 20px 0 0 20px;
+}
+.main-grid .convas-title label {
+  font-weight: 700;
+}
 .textbox {
   display: flex;
   flex-direction: column;
@@ -106,4 +112,27 @@ input {
 }
 .blue {
   color: blue;
+}
+.record .icon {
+  margin-left: 17px;
+  margin-top: -30px;
+  position: absolute;
+  background-color: red;
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  background-clip: border-box;
+  border-radius: 20px;
+  z-index: 100000;
+}
+.recording .icon {
+  margin-left: 17px;
+  margin-top: -30px;
+  position: absolute;
+  background-color: black;
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  background-clip: border-box;
+  border-radius: 0;
 }

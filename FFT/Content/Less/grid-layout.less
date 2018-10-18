@@ -104,7 +104,6 @@ html, body {
             margin-top: 20px;
             display: flex;
             flex-flow: row;
-
         }
     }
 
@@ -120,6 +119,15 @@ html, body {
             canvas {
                 border: 1px solid black;
             }
+        }
+    }
+
+
+
+    .convas-title {
+        padding: 20px 0 0 20px;;
+        label{
+            font-weight: 700;
         }
     }
 }
@@ -139,10 +147,40 @@ label, input {
 }
 
 
-.green{
+.green {
     color: green;
 }
 
-.blue{
+.blue {
     color: blue;
+}
+
+
+.record {
+    .icon {
+        margin-left: 17px;
+        margin-top: -30px;
+        position: absolute;
+        background-color: red;
+        height: 18px;
+        width: 18px;
+        display: inline-block;
+        background-clip: border-box;
+        border-radius: 20px;
+        z-index: 100000;
+    }
+}
+
+.recording {
+    .icon {
+        margin-left: 17px;
+        margin-top: -30px;
+        position: absolute;
+        background-color: black;
+        height: 18px;
+        width: 18px;
+        display: inline-block;
+        background-clip: border-box;
+        border-radius: 0;
+    }
 }
