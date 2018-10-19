@@ -111,7 +111,7 @@ function drawFFT(index, N, Nmax, even, ftx, data, hz) {
 function fft1() {
 
     var data = [];
-    $('#freq-container').find('input').each(function (index) {
+    $('#freq-container').find('input[type=text]').each(function (index) {
         data.push($(this).val());
     });
 
