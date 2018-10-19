@@ -79,7 +79,7 @@ namespace AirHelp.Controllers
                 data[i] = com;
             }
 
-            Array.Copy(data, time, data.Length); 
+            Array.Copy(data, time, data.Length);
 
             FourierTransform.DFT(data, FourierTransform.Direction.Forward);
 
@@ -121,6 +121,50 @@ namespace AirHelp.Controllers
 
         }
 
+        public class Data{
+            public Double Re { get; set; }
+            public Double Im { get; set; }
+        }
+
+        [Route("fftC")]
+        public ActionResult fftC(Data[] json)
+        {
+
+            Complex[] data = new Complex[json.Length];
+           
+            for (int i = 0; i < json.Length; i++)
+            {
+                var com = new Complex(json[i].Re, json[i].Im);
+                data[i] = com;
+            }
+
+            
+
+            FourierTransform.DFT(data, FourierTransform.Direction.Forward);
+
+            return Json(data, JsonRequestBehavior.AllowGet);
+
+        }
+
+        [Route("fftC1")]
+        public ActionResult fftC1(Complex[] json)
+        {
+
+            Complex[] data = new Complex[json.Length];
+
+            for (int i = 0; i < json.Length; i++)
+            {
+                var com = new Complex(json[i].Re, json[i].Im);
+                data[i] = com;
+            }
+
+
+
+            FourierTransform.DFT(data, FourierTransform.Direction.Backward);
+
+            return Json(data, JsonRequestBehavior.AllowGet);
+
+        }
 
 
         [HttpGet]
@@ -157,6 +201,13 @@ namespace AirHelp.Controllers
         public ActionResult Dft1()
         {
             return View("dft1");
+        }
+
+        [HttpGet]
+        [Route("dft2")]
+        public ActionResult Dft2()
+        {
+            return View("dft2");
         }
 
         private Complex ParceCom(string comlex)

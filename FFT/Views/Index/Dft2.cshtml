@@ -1,0 +1,79 @@
+﻿<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+
+<div class="container">
+
+
+    <div class="main-grid">
+
+        <div class="grid">
+            <div class="heder">
+                <div class="textbox" style="margin-left: 20px;">
+                    <label>Count</label>
+                    <input type="range" id="rangeC" min="0" value="" />
+                </div>
+            </div>
+            <div class="heder">
+                <div class="textbox" style="margin-left: 20px;">
+                    <label>Amplitude</label>
+                    <input type="range" id="rangeC" min="0" value="" />
+                </div>
+            </div>
+            <div class="heder">
+                <div class="textbox" style="margin-left: 20px;">
+                    <input type="range" id="rangeC" min="0" value="" />
+                </div>
+            </div>
+            <div class="heder">
+                <div class="textbox" style="margin-left: 20px;">
+                    <input type="range" id="rangeA" min="0" value="" />
+                </div>
+            </div>
+            <div class="heder">
+                <div class="textbox">
+                    <input type="button" onclick="countFilter()" value="DRAW" />
+                </div>
+
+            </div>
+            <div class="heder">
+                <div class="textbox">
+                    <input type="button" onclick="amplitudeFilter()" value="DRAW" />
+                </div>
+
+            </div>
+           
+
+        </div>
+        <div class="convas-grid">
+            <div class="convas-holder">
+                <canvas id="ctime" width="700px" height="350px"></canvas>
+            </div>
+            <div class="convas-holder">
+                <canvas id="cfft" width="700px" height="350px"></canvas>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="~/Scripts/fft2.js"></script>
+
+<script type="text/javascript">
+    $('body').keyup(function (e) {
+        if (e.which == 39) {
+            $('body').hide(1000);
+            setTimeout(function () {
+                window.location = "/fourie";
+            }, 1000);
+        }
+        if (e.which == 37) {
+            $('body').hide(1000);
+            setTimeout(function () {
+                window.location = "/";
+            }, 1000);
+        }
+
+    });
+</script>
+<script src="~/Scripts/main.js"></script>
