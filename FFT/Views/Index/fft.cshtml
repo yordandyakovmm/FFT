@@ -73,6 +73,7 @@
                         p.background(400);
                         p.beginShape();
                         for (i = 0; i < data.length; i++) {
+
                             p.vertex(i, p.map(data[i], 0, 255, p.height, 0));
                         }
                         p.endShape();

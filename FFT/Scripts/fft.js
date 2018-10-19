@@ -39,8 +39,8 @@ function draw(data) {
 
     var ftx = cFft.getContext('2d');
     ftx.beginPath();
-    ftx.moveTo(xCalck(0), y(0));
-    ftx.lineTo(xCalck(660), y(0));
+    ftx.moveTo(xCalck(0), yCalck(0));
+    ftx.lineTo(xCalck(660), yCalck(0));
     ftx.stroke();
 
 
@@ -75,15 +75,15 @@ function drawFFT(index, N, Nmax, even, ftx, data, hz) {
     var hxText = (hz / ttime).toFixed(2);
     ftx.fillStyle = 'black';
     ftx.beginPath();
-    ftx.moveTo(x1(xx), y(10));
-    ftx.lineTo(x1(xx), y(-10));
+    ftx.moveTo(xCalck1(xx), yCalck(10));
+    ftx.lineTo(xCalck1(xx), yCalck(-10));
     ftx.stroke();
 
     ftx.fillStyle = color;
     ftx.font = "11px Arial";
-    ftx.fillText(hxText, x1(xx - 5), y(-25));
+    ftx.fillText(hxText, xCalck1(xx - 5), yCalck(-25));
     ftx.beginPath();
-    ftx.arc(x1(xx), y(fft[ind].real * 20), 5, 0, 2 * Math.PI, false);
+    ftx.arc(xCalck1(xx), yCalck(fft[ind].real * 20), 5, 0, 2 * Math.PI, false);
     ftx.fillStyle = 'red';
     ftx.fill();
 
@@ -92,15 +92,15 @@ function drawFFT(index, N, Nmax, even, ftx, data, hz) {
         var xx = max * -1 * index;
         ftx.fillStyle = 'black';
         ftx.beginPath();
-        ftx.moveTo(x1(xx), y(10));
-        ftx.lineTo(x1(xx), y(-10));
+        ftx.moveTo(xCalck1(xx), yCalck(10));
+        ftx.lineTo(xCalck1(xx), yCalck(-10));
         ftx.stroke();
 
         ftx.fillStyle = color;
         ftx.font = "11px Arial";
-        ftx.fillText(hxText, x1(xx - 5), y(-25));
+        ftx.fillText(hxText, xCalck1(xx - 5), yCalck(-25));
         ftx.beginPath();
-        ftx.arc(x1(xx), y(fft[ind].real * 20), 5, 0, 2 * Math.PI, false);
+        ftx.arc(xCalck1(xx), yCalck(fft[ind].real * 20), 5, 0, 2 * Math.PI, false);
         ftx.fillStyle = 'red';
         ftx.fill();
     }
