@@ -431,6 +431,7 @@
     <Content Include="Scripts\jquery-1.12.4.min.map" />
     <Content Include="fonts\Round.ttf" />
     <Content Include="fonts\ALS_Schlange_sans_reg.ttf" />
+    <Content Include="Properties\PublishProfiles\site2.PublishSettings" />
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
