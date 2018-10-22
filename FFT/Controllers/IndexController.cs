@@ -147,7 +147,7 @@ namespace AirHelp.Controllers
         }
 
         [Route("fftC1")]
-        public ActionResult fftC1(Complex[] json)
+        public ActionResult fftC1(Data[] json)
         {
 
             Complex[] data = new Complex[json.Length];
