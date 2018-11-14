@@ -9,3 +9,8 @@ D:\Release\AForge.Math.pdb
 D:\Release\AForge.Math.xml
 D:\FFT\Math\obj\Debug\AForge.Math.dll
 D:\FFT\Math\obj\Debug\AForge.Math.pdb
+E:\Release\AForge.Math.dll
+E:\Release\AForge.Math.pdb
+E:\Release\AForge.Math.xml
+E:\FFT\Math\obj\Debug\AForge.Math.dll
+E:\FFT\Math\obj\Debug\AForge.Math.pdb

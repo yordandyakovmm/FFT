@@ -17,7 +17,6 @@ using System.Web.Security;
 using System.Threading;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
-using System.Web.Helpers;
 using System.Web.Script.Serialization;
 using System.Device.Location;
 using AForge.Math;
