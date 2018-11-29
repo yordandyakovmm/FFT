@@ -238,54 +238,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Assets\285053.png" />
-    <Content Include="Content\Assets\4c58fcdb.png" />
-    <Content Include="Content\Assets\59919.png" />
-    <Content Include="Content\Assets\73e5f5811aab5673afcaa99032383457.png" />
-    <Content Include="Content\Assets\88db8d1d-checkmark_01j01j01j01j000000.png" />
-    <Content Include="Content\Assets\Airplane\airplane1.png" />
-    <Content Include="Content\Assets\Airplane\airplane2.png" />
-    <Content Include="Content\Assets\Airplane\PlainInClouds.jpg" />
-    <Content Include="Content\Assets\Background\blue_top_bkgd5-73e7fc3f.jpg" />
-    <Content Include="Content\Assets\Background\claud-map.jpg" />
-    <Content Include="Content\Assets\Background\colors-simple-background-1080P-wallpaper-middle-size.jpg" />
-    <Content Include="Content\Assets\Background\login.jpg" />
-    <Content Include="Content\Assets\Background\oscuro.png" />
-    <Content Include="Content\Assets\Background\claim-split.jpg" />
-    <Content Include="Content\Assets\Background\обезщетение-в-зависимост-от-разтоянието-на-полета.jpg" />
-    <Content Include="Content\Assets\clouds.jpg" />
-    <Content Include="Content\Assets\Icon\19-1User-512.png" />
-    <Content Include="Content\Assets\Icon\access-512.png" />
-    <Content Include="Content\Assets\Icon\access_key-512.png" />
-    <Content Include="Content\Assets\Icon\cc-icon-01.svg" />
-    <Content Include="Content\Assets\Icon\cc-icon-02.svg" />
-    <Content Include="Content\Assets\Icon\cc-icon-03.svg" />
-    <Content Include="Content\Assets\d192862f-pexels-delayed-4-compressor.jpg" />
-    <Content Include="Content\Assets\Icon\distance0.png" />
-    <Content Include="Content\Assets\Icon\distance1.png" />
-    <Content Include="Content\Assets\Icon\distance2.png" />
-    <Content Include="Content\Assets\Icon\distance3.png" />
-    <Content Include="Content\Assets\Icon\distance4.png" />
-    <Content Include="Content\Assets\Icon\distance5.png" />
-    <Content Include="Content\Assets\Icon\download.jpg" />
-    <Content Include="Content\Assets\Icon\download.png" />
-    <Content Include="Content\Assets\Icon\exit_delete_close_remove_door-512.png" />
-    <Content Include="Content\Assets\Icon\images.png" />
-    <Content Include="Content\Assets\Icon\login.png" />
-    <Content Include="Content\Assets\Icon\logout.ico" />
-    <Content Include="Content\Assets\overbooking.jpg" />
-    <Content Include="Content\Assets\woman-watch.jpeg" />
-    <Content Include="Content\Assets\yellow-cloud-plaine.jpg" />
-    <Content Include="Content\Assets\five-green-stars.png" />
-    <Content Include="Content\Assets\facebook-logout-button-851580_650602211663185_74135741_n.png" />
-    <Content Include="Content\Assets\images.png" />
-    <Content Include="Content\Assets\logoRed.png" />
-    <Content Include="Content\Assets\закъснение-полет.png" />
-    <Content Include="Content\Assets\излитащ-самолет.jpg" />
-    <Content Include="Content\Assets\обезщетение-при-полет.jpg" />
-    <Content Include="Content\Assets\отказан-достъп-до-борда-1.jpg" />
-    <Content Include="Content\Assets\отказан-достъп-до-борда.jpg" />
-    <Content Include="Content\Assets\отменен-полет.jpg" />
     <Content Include="Content\css\grid-layout.css" />
     <Content Include="Content\css\grid-layout.min.css">
       <DependentUpon>grid-layout.css</DependentUpon>
@@ -299,9 +251,7 @@
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
     <Content Include="Content\css\Site.css" />
-    <Content Include="Content\Docs\eu_complaint_form_bg-261.pdf" />
-    <Content Include="Content\Docs\eu_complaint_form_en.pdf" />
-    <Content Include="Content\Docs\eu_complaint_form_bg.pdf" />
+    <Content Include="Content\discrete.png" />
     <Content Include="Content\Less\input-style.less" />
     <None Include="Content\Less\grid-layout.less" />
     <Content Include="Content\Less\grid-layout - Copy.css">
@@ -316,6 +266,8 @@
     <Content Include="Content\Less\grid-layout.min.css">
       <DependentUpon>grid-layout.css</DependentUpon>
     </Content>
+    <Content Include="Content\logo.jpg" />
+    <Content Include="Content\Mechanical_calculators_Keyboards.png" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -432,7 +384,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\form.js" />
+    <Content Include="Scripts\navigation.js" />
     <Content Include="Scripts\flyght-form.js" />
     <Content Include="Scripts\logic.js" />
     <Content Include="Scripts\main.js" />
@@ -453,13 +405,11 @@
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Pdf\Attorney.cshtml" />
     <Content Include="Views\Common\ForUs.cshtml" />
     <Content Include="Views\Index\Index.cshtml" />
     <Content Include="Views\Common\PrivatePolice.cshtml" />
     <Content Include="Views\Common\faq.cshtml" />
     <Content Include="Views\Common\CommonRules.cshtml" />
-    <Content Include="Views\Pdf\AttorneyPdf.cshtml" />
     <Content Include="Views\Common\ContactForm.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="site1.PublishSettings" />
@@ -486,7 +436,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Assets\Logo\" />
     <Folder Include="UserDocuments\" />
     <Folder Include="Views\Claim\" />
   </ItemGroup>

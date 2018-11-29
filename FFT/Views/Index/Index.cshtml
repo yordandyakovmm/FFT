@@ -1,28 +1,11 @@
-﻿<div class="container">
+﻿<div class="container" >
     @*<span class="heder">The most used algorithm</span>
     <span class="sub-heder">in the wold</span>*@
     <span class="heder red">FFT</span>
     
 </div>
 <script type="text/javascript">
-    $('body').keyup(function (e) {
-        if (!e.ctrlKey)
-        {
-            return;
-        }
-        if (e.which == 39) {
-            $('body').hide(1000);
-            setTimeout(function () {
-                window.location = "/agenda";
-            }, 1000);
-        }
-        if (e.which == 37) {
-            $('body').hide(1000);
-            setTimeout(function () {
-                window.location = "/";
-            }, 1000);
-        }
-
-    });
+    var frward = '/agenda';
+    var backward = '/';
 </script>
 <script src="~/Scripts/main.js"></script>
