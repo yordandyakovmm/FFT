@@ -1,6 +1,6 @@
 ﻿$('body').keyup(function (e) {
-
-    if (!e.ctrlKey) {
+    debugger;
+    if (!e.altKey) {
         return;
     }
 
