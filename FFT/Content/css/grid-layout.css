@@ -24,9 +24,6 @@ body {
   justify-content: center;
   background-size: 100%;
 }
-.container > * {
-  margin-bottom: 4vh;
-}
 .agenda {
   background-color: #009fe3;
   color: white;
@@ -40,14 +37,15 @@ body {
   margin-bottom: 4vh;
 }
 .heder {
-  font-size: 4vh;
+  font-size: 70px;
+  font-weight: 900;
   min-width: 380px;
 }
 .sub-heder {
   font-size: 8vh;
 }
 .sub-heder-6 {
-  font-size: 6vh;
+  font-size: 50px;
 }
 .red {
   color: darkred;
@@ -135,4 +133,10 @@ input {
   display: inline-block;
   background-clip: border-box;
   border-radius: 0;
+}
+.theme {
+  /*background-image: url('../logo.jpg');
+    //background-image: url('../giphy.gif');
+    background-size: 200%*/
+  background-color: #171717;
 }
