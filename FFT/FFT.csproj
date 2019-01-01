@@ -252,6 +252,8 @@
     </None>
     <Content Include="Content\css\Site.css" />
     <Content Include="Content\discrete.png" />
+    <Content Include="Content\flat.jpg" />
+    <Content Include="Content\giphy.gif" />
     <Content Include="Content\Less\input-style.less" />
     <None Include="Content\Less\grid-layout.less" />
     <Content Include="Content\Less\grid-layout - Copy.css">
@@ -268,6 +270,7 @@
     </Content>
     <Content Include="Content\logo.jpg" />
     <Content Include="Content\Mechanical_calculators_Keyboards.png" />
+    <Content Include="Content\round.jpg" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -419,6 +422,11 @@
     <Content Include="Views\Index\Dft1.cshtml" />
     <Content Include="Views\Index\fft.cshtml" />
     <Content Include="Views\Index\Dft2.cshtml" />
+    <Content Include="Views\Index\Dft - Copy.cshtml" />
+    <Content Include="Views\Index\18.cshtml" />
+    <Content Include="Views\Index\eart.cshtml" />
+    <Content Include="Views\Index\eart1.cshtml" />
+    <Content Include="Views\Index\fourie.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

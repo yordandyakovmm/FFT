@@ -6,38 +6,29 @@
 
     // -->
     if (e.which == 39) {
-        $('body').hide(1000);
-        setTimeout(function () {
+        $('body');
             window.location = frward;
-        }, 1000);
     }
     // <--
     if (e.which == 37) {
-        $('body').hide(1000);
-        setTimeout(function () {
+        $('body');
             window.location = backward;
-        }, 1000);
     }
 
     if (e.which == 81 || e.which == 113) {
-        $('body').hide(1000);
-        setTimeout(function () {
+        $('body');
             window.location ='/';
-        }, 1000);
     }
 
     if (e.which == 87 || e.which == 119) {
-        $('body').hide(1000);
-        setTimeout(function () {
+        $('body');
             window.location = '/dft';
-        }, 1000);
     }
 
     if (e.which == 69 || e.which == 101) {
-        $('body').hide(1000);
-        setTimeout(function () {
-            window.location = '/dft1';
-        }, 1000);
+        $('body');
+         window.location = '/dft1';
+       
     }
 
 

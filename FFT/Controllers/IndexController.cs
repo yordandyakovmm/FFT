@@ -209,6 +209,34 @@ namespace AirHelp.Controllers
             return View("dft2");
         }
 
+        [HttpGet]
+        [Route("eart")]
+        public ActionResult eart()
+        {
+            return View("eart");
+        }
+
+        [HttpGet]
+        [Route("eart1")]
+        public ActionResult eart1()
+        {
+            return View("eart1");
+        }
+
+        [HttpGet]
+        [Route("fourie")]
+        public ActionResult fourie()
+        {
+            return View("fourie");
+        }
+
+        [HttpGet]
+        [Route("18")]
+        public ActionResult a18()
+        {
+            return View("18");
+        }
+
         private Complex ParceCom(string comlex)
         {
 

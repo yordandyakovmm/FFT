@@ -1,0 +1,77 @@
+﻿<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<div class="container">
+
+
+    <div class="main-grid">
+
+
+        <div class="grid">
+            <div class="heder">
+                <div class="textbox">
+                    <label>Time</label>
+                    <input type="text" id="time" value="30">
+                </div>
+                <div class="textbox" style="margin-left: 20px;">
+                    <label>Sample</label>
+                    <input type="text" id="sample" onchange="sampleChange()" value="">
+                </div>
+            </div>
+            <div class="heder">
+                <div class="textbox">
+                    <input type="button" onclick="fft()" value="DFT" />
+                </div>
+                <div class="textbox" style="margin-left: 20px;">
+                    <input type="button" onclick="fft1()" value="INVERSE DFT" />
+                </div>
+            </div>
+            <div class="grid-2">
+                <div class="left" id="time-container">
+
+                </div>
+                <div class="rigth" id="freq-container" style="margin-left: 20px;">
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="convas-grid">
+            <div class="convas-holder">
+                <canvas id="ctime" width="700px" height="350px"></canvas>
+            </div>
+            <div class="convas-holder">
+                <canvas id="cfft" width="700px" height="350px"></canvas>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="~/Scripts/fft.js"></script>
+
+<script type="text/template" id="template">
+    <div class="textbox">
+        <label>#3#</label>
+        <input type="text" id="#1#" value="#2#">
+    </div>
+</script>
+
+
+<script type="text/template" id="template1">
+    <div class="textbox">
+        <label> <span style="color: mediumvioletred"> #3# </span>  <span class="#5#"> (#4#) </span></label>
+        <input hz="#11#" type="text" id="#1#" value="#2#">
+    </div>
+</script>
+
+<script type="text/javascript">
+    var frward = '/dft1';
+    var backward = '/';
+</script>
+<script src="~/Scripts/main.js"></script>

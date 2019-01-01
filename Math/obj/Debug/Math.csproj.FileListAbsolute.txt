@@ -14,3 +14,10 @@ E:\Release\AForge.Math.pdb
 E:\Release\AForge.Math.xml
 E:\FFT\Math\obj\Debug\AForge.Math.dll
 E:\FFT\Math\obj\Debug\AForge.Math.pdb
+D:\Code\Release\AForge.Math.dll
+D:\Code\Release\AForge.Math.pdb
+D:\Code\Release\AForge.Math.xml
+D:\Code\FFT\Math\obj\Debug\Math.csprojResolveAssemblyReference.cache
+D:\Code\FFT\Math\obj\Debug\Math.csproj.CoreCompileInputs.cache
+D:\Code\FFT\Math\obj\Debug\AForge.Math.dll
+D:\Code\FFT\Math\obj\Debug\AForge.Math.pdb
