@@ -253,6 +253,9 @@
     <Content Include="Content\css\Site.css" />
     <Content Include="Content\discrete.png" />
     <Content Include="Content\flat.jpg" />
+    <Content Include="Content\fourie.png" />
+    <Content Include="Content\fourie1.png" />
+    <Content Include="Content\fourie2.png" />
     <Content Include="Content\Fourier2.jpg" />
     <Content Include="Content\fourierseries3d.png" />
     <Content Include="Content\giphy.gif" />
