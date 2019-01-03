@@ -237,6 +237,12 @@ namespace AirHelp.Controllers
             return View("18");
         }
 
+        [HttpGet]
+        [Route("fTransform")]
+        public ActionResult fTransform()
+        {
+            return View("fTransform");
+        }
         private Complex ParceCom(string comlex)
         {
 
