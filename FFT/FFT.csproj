@@ -432,6 +432,9 @@
     <Content Include="Views\Index\eart.cshtml" />
     <Content Include="Views\Index\eart1.cshtml" />
     <Content Include="Views\Index\fourie.cshtml" />
+    <Content Include="Views\Index\19.cshtml" />
+    <Content Include="Views\Index\dmachine.cshtml" />
+    <Content Include="Views\Index\gaus.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

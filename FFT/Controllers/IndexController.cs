@@ -238,6 +238,28 @@ namespace AirHelp.Controllers
         }
 
         [HttpGet]
+        [Route("19")]
+        public ActionResult a19()
+        {
+            return View("19");
+        }
+
+        [HttpGet]
+        [Route("dmachine")]
+        public ActionResult dmachine()
+        {
+            return View("dmachine");
+        }
+
+
+        [HttpGet]
+        [Route("gause")]
+        public ActionResult gause()
+        {
+            return View("gause");
+        }
+
+        [HttpGet]
         [Route("fTransform")]
         public ActionResult fTransform()
         {

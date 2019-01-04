@@ -1,7 +1,7 @@
 ﻿$('body').keyup(function (e) {
 
 
-    if (!e.altKey) {
+    if (!e.ctrlKey) {
         return;
     }
 
