@@ -253,10 +253,10 @@ namespace AirHelp.Controllers
 
 
         [HttpGet]
-        [Route("gause")]
-        public ActionResult gause()
+        [Route("gaus")]
+        public ActionResult gaus()
         {
-            return View("gause");
+            return View("gaus");
         }
 
         [HttpGet]
@@ -265,6 +265,21 @@ namespace AirHelp.Controllers
         {
             return View("fTransform");
         }
+
+        [HttpGet]
+        [Route("dfunction")]
+        public ActionResult dfunction()
+        {
+            return View("dfunction");
+        }
+
+        [HttpGet]
+        [Route("dft-formula")]
+        public ActionResult dftformula()
+        {
+            return View("dft-formula");
+        }
+
         private Complex ParceCom(string comlex)
         {
 

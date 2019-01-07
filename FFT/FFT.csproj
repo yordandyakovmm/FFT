@@ -435,6 +435,8 @@
     <Content Include="Views\Index\19.cshtml" />
     <Content Include="Views\Index\dmachine.cshtml" />
     <Content Include="Views\Index\gaus.cshtml" />
+    <Content Include="Views\Index\dfunction.cshtml" />
+    <Content Include="Views\Index\dft-formula.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
