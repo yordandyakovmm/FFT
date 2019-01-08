@@ -7,6 +7,7 @@ D:\FFT\Math\obj\Release\AForge.Math.pdb
 E:\Release\AForge.Math.dll
 E:\Release\AForge.Math.pdb
 E:\Release\AForge.Math.xml
-E:\FFT\Math\obj\Release\Math.csprojResolveAssemblyReference.cache
 E:\FFT\Math\obj\Release\AForge.Math.dll
 E:\FFT\Math\obj\Release\AForge.Math.pdb
+E:\FFT\Math\obj\Release\Math.csprojAssemblyReference.cache
+E:\FFT\Math\obj\Release\Math.csproj.CoreCompileInputs.cache

@@ -425,7 +425,7 @@
     <Content Include="Views\Index\fTransform.cshtml" />
     <Content Include="Views\Index\Dft.cshtml" />
     <Content Include="Views\Index\Dft1.cshtml" />
-    <Content Include="Views\Index\fft.cshtml" />
+    <Content Include="Views\Index\fftd.cshtml" />
     <Content Include="Views\Index\Dft2.cshtml" />
     <Content Include="Views\Index\Dft - Copy.cshtml" />
     <Content Include="Views\Index\18.cshtml" />

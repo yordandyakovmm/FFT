@@ -21,3 +21,5 @@ D:\Code\FFT\Math\obj\Debug\Math.csprojResolveAssemblyReference.cache
 D:\Code\FFT\Math\obj\Debug\Math.csproj.CoreCompileInputs.cache
 D:\Code\FFT\Math\obj\Debug\AForge.Math.dll
 D:\Code\FFT\Math\obj\Debug\AForge.Math.pdb
+E:\FFT\Math\obj\Debug\Math.csprojAssemblyReference.cache
+E:\FFT\Math\obj\Debug\Math.csproj.CoreCompileInputs.cache

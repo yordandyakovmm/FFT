@@ -47,20 +47,7 @@
 <script src="~/Scripts/fft2.js"></script>
 
 <script type="text/javascript">
-    $('body').keyup(function (e) {
-        if (e.which == 39) {
-            $('body').hide(1000);
-            setTimeout(function () {
-                window.location = "/fourie";
-            }, 1000);
-        }
-        if (e.which == 37) {
-            $('body').hide(1000);
-            setTimeout(function () {
-                window.location = "/";
-            }, 1000);
-        }
-
-    });
+    var frward = '/dft1';
+    var backward = '/fftd';
 </script>
 <script src="~/Scripts/main.js"></script>

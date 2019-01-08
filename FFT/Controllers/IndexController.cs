@@ -280,6 +280,13 @@ namespace AirHelp.Controllers
             return View("dft-formula");
         }
 
+        [HttpGet]
+        [Route("fftd")]
+        public ActionResult fftd()
+        {
+            return View("fftd");
+        }
+
         private Complex ParceCom(string comlex)
         {
 
