@@ -1,5 +1,5 @@
 ﻿<div class="container">
-    <div class="theme"  style="height: 100%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: black">
+    <div class="theme" id="con"  style="height: 100%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: black">
         <div style="width: 100%; display: flex; flex-direction: row; align-content: center; align-items: center; justify-content: center; font-size: 220px; color: black"; font-weight: 900; margin: 0">
             <img src="~/Content/discrete.png" height="auto" />
         </div>
@@ -11,5 +11,26 @@
 <script type="text/javascript">
     var frward = '/dft-formula';
     var backward = '/gaus';
+
+    var index = 0;
+   
+    $('body').keyup(function (e) {
+        if (e.keyCode == 32) {
+            index++;
+            if (index == 2) {
+                index = 0;
+            }
+
+            if (index == 1) {
+                $('#con').css('background-color', 'black');
+            }
+            else
+            {
+                $('#con').css('background-color', 'transparent');
+            }
+          
+        }
+    });
+
 </script>
 <script src="~/Scripts/main.js"></script>

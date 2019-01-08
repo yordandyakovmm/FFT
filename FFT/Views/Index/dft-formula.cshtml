@@ -25,20 +25,40 @@
                     margin: 0">
 
 
-            <span class="i1" style="font-size: 35px;" >
-                $$\color{blue}{x_n} = \sum_{k=0}^{N-1}\color{red}{X_n}e^{-\frac{2\pi ikn}{N}}$$
-            </span>
-            <span class="i1" style="font-size: 35px;">
-                $$\color{red}{X_n} = \frac{1}{N}\sum_{k=0}^{N-1}\color{blue}{x_n}e^{\frac{2\pi ikn}{N}}$$
-            </span>
-
-            <span class="i0" style="font-size: 35px;">
-                $$\color{blue}{F(\omega)} = \int_{-\infty}^{\infty}\color{red}{f(t)}e^{-2\pi it \omega}d{t}$$
-            </span>
-            <span class="i0" style="font-size: 35px;">
-                $$\color{red}{f(t)} = \int_{-\infty}^{\infty}\color{blue}{F(\omega)} e^{2\pi it \omega}d{\omega}$$
-            </span>
-
+            <div class="i1" style="width: 100%;
+                    height: 90%;
+                    width:50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-self: flex-start;
+                    align-items: flex-start;
+                    justify-content: center" >
+               
+                <span style="font-size: 32px;">
+                    $$\color{blue}{x_n} = \sum_{k=0}^{N-1}\color{red}{X_n}e^{-\frac{2\pi ikn}{N}}$$
+                </span>
+                <span style="font-size: 32px;">
+                    $$\color{red}{X_n} = \frac{1}{N}\sum_{k=0}^{N-1}\color{blue}{x_n}e^{\frac{2\pi ikn}{N}}$$
+                </span>
+                <span style="font-size: 32px;">
+                    $$ \color{blue}{x_1, x_2,..., x_n} \rightleftharpoons \color{red}{X_1, X_2,..., X_n} $$
+                </span>
+            </div>
+            <div class="i0" style="width: 100%;
+                    height: 90%;
+                    width:50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-self: flex-start;
+                    align-items: flex-start;
+                    justify-content: center">
+                <span  style="font-size: 55px;">
+                    $$\color{blue}{F(\omega)} = \int_{-\infty}^{\infty}\color{red}{f(t)}e^{-2\pi it \omega}d{t}$$
+                </span>
+                <span  style="font-size: 55px;">
+                    $$\color{red}{f(t)} = \int_{-\infty}^{\infty}\color{blue}{F(\omega)} e^{2\pi it \omega}d{\omega}$$
+                </span>
+            </div>
         </div>
 
 

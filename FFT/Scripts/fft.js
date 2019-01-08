@@ -126,7 +126,7 @@ function fft1() {
                 var $i = $('#t' + i);
                 $i.data.real = data.time[i].real;
                 $i.data.imag = data.time[i].imag;
-                $i.val(data.time[i].real.toFixed(3) + (Math.abs(data.time[i].imag) < 0.0001 ? '' : (data.time[i].imag > 0 ? '+' + data.time[i].imag.toFixed(3) : data.fft[i].imag.toFixed(3)) + 'i'));
+                $i.val(data.time[i].real.toFixed(3) + (Math.abs(data.time[i].imag) < 0.001 ? '' : (data.time[i].imag > 0 ? '+' + data.time[i].imag.toFixed(3) : data.fft[i].imag.toFixed(3)) + 'i'));
             }
 
             draw(data);
