@@ -1,0 +1,101 @@
+﻿<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<div class="container">
+
+    <div style="width: 100%; height: 85%; display: flex; flex-direction: row; align-self: flex-start; align-items: center; justify-content: flex-start;  margin: 0">
+
+        <div style=" color: #009fe3; font-size: 60px; font-weight: 900; padding-left:100px; width: 100%; height: 90%;  width:50%;  display: flex; flex-direction: column; align-self: flex-start; align-items: flex-start; justify-content: center;  margin: 0">
+            <span><span style="color: blue; font-size: 70px; font-weight: 900;">F</span>ast</span>
+            <span><span style="color: blue; font-size: 70px; font-weight: 900;">F</span>ourier</span>
+            <span><span style="color: blue; font-size: 70px; font-weight: 900;">T</span>ransform</span>
+        </div>
+        <div style="width: 100%;
+                    height: 90%;
+                    width:50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-self: center;
+                    align-items: flex-start;
+                    justify-content: center;
+                    margin: 0">
+
+
+            <div class="i0" style="width: 100%;
+                    height: 90%;
+                    width:50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-self: flex-start;
+                    align-items: center;
+                    justify-content: center">
+
+                <div class="grid">
+                    <div class="heder">
+                        <div class="textbox">
+                            <label>Count</label>
+                            <input type="text" onkeyup="sampleChange(this)" id="time" value="30">
+                        </div>
+                        <div class="textbox" style="margin-top: 10px;">
+                            <label id="result"></label>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="i1" style="width: 100%;
+                    height: 90%;
+                    width:50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-self: flex-start;
+                    align-items: flex-start;
+                    justify-content: center">
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+
+</div>
+
+<script type="text/javascript">
+    var frward = '/mp3';
+    var backward = '/fftd';
+    var index = -1;
+    $('.i0').hide();
+    $('.i1').hide();
+    $('.i2').hide();
+
+    function sampleChange(obj) {
+        $('#result').text('');
+        var a = parseInt($(obj).val());
+        var result = (a / Math.log((a))).toFixed(0);
+        $('#result').text(result);
+    }
+
+    $('body').keyup(function (e) {
+        if (e.keyCode == 32) {
+            index++;
+            if (index == 2) {
+                index = 0;
+            }
+            $('.i0').hide();
+            $('.i1').hide();
+            $('.i1').hide();
+            $('.i' + index).show();
+        }
+    });
+
+
+</script>
+<script src="~/Scripts/main.js"></script>

@@ -287,6 +287,21 @@ namespace AirHelp.Controllers
             return View("fftd");
         }
 
+        [HttpGet]
+        [Route("fft-formula")]
+        public ActionResult fftformula()
+        {
+            return View("fft-formula");
+        }
+
+        [HttpGet]
+        [Route("mp3")]
+        public ActionResult mp3()
+        {
+            return View("mp3");
+        }
+
+
         private Complex ParceCom(string comlex)
         {
 

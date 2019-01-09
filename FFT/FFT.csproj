@@ -427,7 +427,6 @@
     <Content Include="Views\Index\Dft1.cshtml" />
     <Content Include="Views\Index\fftd.cshtml" />
     <Content Include="Views\Index\Dft2.cshtml" />
-    <Content Include="Views\Index\Dft - Copy.cshtml" />
     <Content Include="Views\Index\18.cshtml" />
     <Content Include="Views\Index\eart.cshtml" />
     <Content Include="Views\Index\eart1.cshtml" />
@@ -437,6 +436,8 @@
     <Content Include="Views\Index\gaus.cshtml" />
     <Content Include="Views\Index\dfunction.cshtml" />
     <Content Include="Views\Index\dft-formula.cshtml" />
+    <Content Include="Views\Index\fft-formula.cshtml" />
+    <Content Include="Views\Index\mp3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
