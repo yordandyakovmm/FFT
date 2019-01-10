@@ -301,6 +301,13 @@ namespace AirHelp.Controllers
             return View("mp3");
         }
 
+        [HttpGet]
+        [Route("logo")]
+        public ActionResult logo()
+        {
+            return View("logo");
+        }
+
 
         private Complex ParceCom(string comlex)
         {

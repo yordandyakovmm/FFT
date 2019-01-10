@@ -438,6 +438,8 @@
     <Content Include="Views\Index\dft-formula.cshtml" />
     <Content Include="Views\Index\fft-formula.cshtml" />
     <Content Include="Views\Index\mp3.cshtml" />
+    <Content Include="Views\Index\logo.cshtml" />
+    <Content Include="Views\Shared\_LayoutLogo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
