@@ -277,6 +277,7 @@
     </Content>
     <Content Include="Content\logo.jpg" />
     <Content Include="Content\Mechanical_calculators_Keyboards.png" />
+    <Content Include="Content\mouse.jpg" />
     <Content Include="Content\round.jpg" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
@@ -386,6 +387,7 @@
     <Content Include="fonts\Round.ttf" />
     <Content Include="fonts\ALS_Schlange_sans_reg.ttf" />
     <Content Include="Properties\PublishProfiles\site2.PublishSettings" />
+    <Content Include="Content\MP3.pdf" />
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
@@ -442,6 +444,7 @@
     <Content Include="Views\Index\mp3.cshtml" />
     <Content Include="Views\Index\logo.cshtml" />
     <Content Include="Views\Shared\_LayoutLogo.cshtml" />
+    <Content Include="Views\Index\convolution.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

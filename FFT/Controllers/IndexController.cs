@@ -308,6 +308,12 @@ namespace AirHelp.Controllers
             return View("logo");
         }
 
+        [HttpGet]
+        [Route("convolution")]
+        public ActionResult com()
+        {
+            return View("convolution");
+        }
 
         private Complex ParceCom(string comlex)
         {
