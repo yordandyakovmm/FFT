@@ -147,6 +147,7 @@ input {
   align-items: flex-start;
   align-content: flex-start;
   border: none;
+  cursor: pointer;
 }
 .matrix > div {
   display: flex;
@@ -160,4 +161,9 @@ input {
   border: none;
   height: 15px !important;
   width: 15px !important;
+}
+canvas {
+  width: 200px;
+  height: 200px;
+  cursor: pointer !important;
 }

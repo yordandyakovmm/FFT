@@ -24,7 +24,7 @@
                 </div>
             </div>
             <span> = </span>
-            <canvas id="c1-result"></canvas>
+            <canvas id="c1-result" style="" onclick="convolute1()"></canvas>
         </div>
        
     </div>
@@ -40,6 +40,7 @@
     var context1 = canvas1.getContext('2d');
     var canvas1_result = document.getElementById('c1-result');
     var context1_resulr = canvas1_result.getContext('2d');
+    var value1 = 0;
     var x = null;
     var y = null;
     var xMatrix = null;
@@ -61,7 +62,49 @@
 
     function convolute1()
     {
-        xMatrix = $('#m1 > div').lenthe
+        value1 = 0;
+        xMatrix = yMatrix = $('#m1 > div').length;
+        var cer = new Array(xMatrix);
+        for (var i = 0; i < xMatrix; i++)
+        {
+            cer[i] = new Array(yMatrix);
+            for (var j = 0; j < xMatrix; j++) {
+                cer[i][j] = parseInt( $($('#m1 > div')[i]).find('input')[j].value );
+                value1 = value1 + cer[i][j];
+            }
+        }
+        $("#c1-result").attr({
+            width: image.width - xMatrix ,
+            height: image.height - yMatrix
+        });
+
+        for (var i = 0; i < image.width - xMatrix; i++) {
+            for (var j = 0; j < image.height - yMatrix; j++) {
+
+                var pixelData = 0;
+                for (var k = 0; k < xMatrix; k++) {
+                    for (var m = 0; m < yMatrix; m++) {
+                        var color = context1.getImageData(i+k, j+m, 1, 1).data[0];
+                        //console.log(color);
+                        //console.log(cer[k][m]);
+                        pixelData = pixelData + cer[k][m] * color; 
+                    }
+                }
+
+                pixelData = pixelData / value1;
+
+                var id = context1_resulr.createImageData(1, 1); 
+                var d = id.data;                        
+                d[0] = pixelData; 
+                d[1] = pixelData;
+                d[2] = pixelData;
+                d[3] = 255;
+                context1_resulr.putImageData(id, i, j);
+            }
+        }
+
+        
+
     }
     
 

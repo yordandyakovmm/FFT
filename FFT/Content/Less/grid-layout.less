@@ -201,17 +201,28 @@ label, input {
     align-items: flex-start;
     align-content: flex-start;
     border: none;
+    cursor: pointer;
+
     > div {
         display: flex;
         flex-direction: row;
         align-items: flex-start;
         align-content: flex-start;
-        input{
+
+        input {
             padding: 10px;
             display: block;
             border: none;
-            height: 15px !important; 
-            width:  15px !important;
+            height: 15px !important;
+            width: 15px !important;
         }
     }
+
+    
+}
+
+canvas {
+    width: 200px;
+    height: 200px;
+    cursor: pointer !important;
 }
