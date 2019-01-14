@@ -41,6 +41,7 @@ namespace AirHelp.Controllers
             return View("CommonRules");
         }
 
+        
 
     }
 }

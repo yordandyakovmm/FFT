@@ -253,6 +253,8 @@
     </None>
     <Content Include="Content\css\Site.css" />
     <Content Include="Content\discrete.png" />
+    <Content Include="Content\fft1.png" />
+    <Content Include="Content\fft2.png" />
     <Content Include="Content\flat.jpg" />
     <Content Include="Content\fourie.png" />
     <Content Include="Content\fourie1.png" />
@@ -445,6 +447,9 @@
     <Content Include="Views\Index\logo.cshtml" />
     <Content Include="Views\Shared\_LayoutLogo.cshtml" />
     <Content Include="Views\Index\convolution.cshtml" />
+    <Content Include="Views\Index\jpg.cshtml" />
+    <Content Include="Views\Index\data.cshtml" />
+    <Content Include="Views\Index\identities.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

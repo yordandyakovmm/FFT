@@ -315,6 +315,23 @@ namespace AirHelp.Controllers
             return View("convolution");
         }
 
+        [Route("identities")]
+        public ActionResult identities(string category)
+        {
+            return View("identities");
+        }
+
+        [Route("data")]
+        public ActionResult data(string category)
+        {
+            return View("data");
+        }
+        [Route("jpg")]
+        public ActionResult jpg(string category)
+        {
+            return View("jpg");
+        }
+
         private Complex ParceCom(string comlex)
         {
 
