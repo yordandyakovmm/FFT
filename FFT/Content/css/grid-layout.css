@@ -162,7 +162,7 @@ input {
   height: 15px !important;
   width: 15px !important;
 }
-canvas {
+canvas .conv {
   width: 200px;
   height: 200px;
   cursor: pointer !important;
