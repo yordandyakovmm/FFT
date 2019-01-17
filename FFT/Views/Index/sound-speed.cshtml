@@ -1,0 +1,197 @@
+﻿<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+
+<script src="~/Scripts/p5/p5.js"></script>
+<script src="~/Scripts/p5/addons/p5.sound.js"></script>
+
+<script src="~/Scripts/lame/lame.min.js"></script>
+
+<div class="container">
+
+
+    <div class="main-grid">
+
+
+        <div class="grid">
+            <div class="convas-holder record" style="padding-top: 60px;">
+                <input type="button" id="record" onclick="record($(this))" value="Record" />
+                <div class="icon">&nbsp;</div>
+            </div>
+            <div class="convas-holder speed" style="padding-top: 10px;">
+                <label id="lSpeed">Speed </label>
+                    <input  id="iSpeed" type="range" step="0.1" onchange="$('#lSpeed').text('Speed:' + this.value)" style="width: 100px;" id="rangeA" min="0.1" max="10" value="1" />
+             </div>
+
+        </div>
+        <div class="convas-grid">
+            @*<div class="convas-title">
+                <label>Sound WAV</label>  
+            </div>
+            <div id="sound-holder" class="convas-holder">
+
+            </div>*@
+
+            <div class="convas-title">
+                <label>FFT</label> 
+            </div>
+
+            <div id="holder-fft" class="convas-holder">
+
+            </div>
+            <script type="text/javascript">
+
+                var sound = function (p) {
+
+                    var mic, fft, recorder, soundFile;
+                    var data = [];
+                    for (var i = 1; i < 710; i++) {
+                        data.push(300);
+                    }
+                    p.setup = function () {
+                        p.createCanvas(710, 400);
+                        p.noFill();
+
+                        mic = new p5.AudioIn();
+                        mic.start();
+
+                        recorder = new p5.SoundRecorder();
+                        recorder.setInput(mic);
+
+                        // create an empty sound file that we will use to playback the recording
+                        soundFile = new p5.SoundFile();
+
+                        window.soundFile = soundFile;
+                        window.recorder = recorder;
+                        window.p = p;
+                    };
+
+                    //p.draw = function () {
+                    //    var val = mic.getLevel();
+                    //    data.push(val * 255 + Math.random() * 5);
+                    //    data.push(val * 255 + Math.random() * 5);
+                    //    if (data.length > 710) {
+                    //        data = data.splice(3, 710);
+                    //    }
+                    //    p.background(400);
+                       
+                    //    p.beginShape();
+                    //    for (i = 0; i < data.length; i++) {
+                    //        p.vertex(i, p.map(data[i], 0, 255, p.height, 0));
+                    //    }
+                    //    p.endShape();
+                    //};
+
+                };
+
+                var fft = function (p) {
+
+                    var mic, fft;
+                    p.setup = function () {
+                        p.createCanvas(710, 400);
+                        p.noFill();
+
+                        mic = new p5.AudioIn();
+                        mic.start();
+                        fft = new p5.FFT();
+                        fft.setInput(mic);
+
+                    };
+
+                    p.draw = function () {
+                        p.background(400);
+
+                        var spectrum = fft.analyze();
+
+                        p.beginShape();
+                        for (i = 0; i < spectrum.length; i++) {
+                            p.vertex(i, p.map(spectrum[i], 0, 255, p.height, 0));
+                        }
+                        p.endShape();
+                    };
+
+                };
+                new p5(fft, 'holder-fft');
+                new p5(sound);
+
+                function record($this) {
+                    if ($this.val() == "Record") {
+                        window.recorder.record(window.soundFile);
+                        $this.val('Recording');
+                        $this.parent().addClass('recording');
+                    }
+                    else {
+                        $this.val('Record');
+                        $this.parent().removeClass('recording');
+
+                        window.recorder.stop();
+                        var samples = window.recorder.buffer[0].map(function (num) {
+                            return num * 256 * 256;
+                        });
+
+                        var mp3Data = [];
+
+                        channels = 1; //window.recorder.output.channelCount; //1 for mono or 2 for stereo
+                        sampleRate = window.recorder.output.context.sampleRate; //44.1khz (normal mp3 samplerate)
+                        kbps = 128; //encode 128kbps mp3
+                        mp3encoder = new lamejs.Mp3Encoder(channels, sampleRate, kbps);
+                        var mp3Data = [];
+
+
+                        sampleBlockSize = window.recorder.bufferSize; //can be anything but make it a multiple of 576 to make encoders life easier
+
+                        var mp3Data = [];
+                        for (var i = 0; i < samples.length; i += sampleBlockSize) {
+                            sampleChunk = samples.subarray(i, i + sampleBlockSize);
+                            var mp3buf = mp3encoder.encodeBuffer(sampleChunk);
+                            if (mp3buf.length > 0) {
+                                mp3Data.push(mp3buf);
+                            }
+                        }
+                        var mp3buf = mp3encoder.flush();   //finish writing mp3
+
+                        if (mp3buf.length > 0) {
+                            mp3Data.push(new Int8Array(mp3buf));
+                        }
+
+                        //var blob = new Blob(mp3Data, { type: 'audio/mp3' });
+
+                        //saveData(blob, 'fft-demo.mp3');
+                       
+
+                        //window.p.saveSound(window.soundFile, 'fft-demo.wav');
+                        var rate = parseFloat(document.querySelector('#iSpeed').value);
+                        window.soundFile.rate(rate);
+                        window.soundFile.play();
+                        //window.soundFile.rate(4);
+
+                    }
+                }
+
+
+                var saveData = (function () {
+                    var a = document.createElement("a");
+                    document.body.appendChild(a);
+                    a.style = "display: none";
+                    return function (blob, fileName) {
+                        url = window.URL.createObjectURL(blob);
+                        a.href = url;
+                        a.download = fileName;
+                        a.click();
+                        window.URL.revokeObjectURL(url);
+                    };
+                }());
+
+            </script>
+
+        </div>
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+    var frward = '/mp3';
+    var backward = '/fftd';
+</script>
+<script src="~/Scripts/main.js"></script>

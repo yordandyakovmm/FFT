@@ -450,6 +450,7 @@
     <Content Include="Views\Index\jpg.cshtml" />
     <Content Include="Views\Index\data.cshtml" />
     <Content Include="Views\Index\identities.cshtml" />
+    <Content Include="Views\Index\sound-speed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -123,6 +123,14 @@ input {
   background-clip: border-box;
   border-radius: 20px;
 }
+.speed {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+.speed > * {
+  margin: 7px 0;
+}
 .recording .icon {
   margin-left: -165px;
   margin-top: 10px;

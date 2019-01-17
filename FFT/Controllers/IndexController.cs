@@ -326,10 +326,17 @@ namespace AirHelp.Controllers
         {
             return View("data");
         }
+
         [Route("jpg")]
         public ActionResult jpg(string category)
         {
             return View("jpg");
+        }
+
+        [Route("sound-speed")]
+        public ActionResult soundspeed(string category)
+        {
+            return View("sound-speed");
         }
 
         private Complex ParceCom(string comlex)
