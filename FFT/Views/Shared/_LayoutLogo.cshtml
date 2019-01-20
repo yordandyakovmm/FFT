@@ -24,7 +24,9 @@
 <body>
     <div class="main-layout">
         @RenderBody()
-        
+        $(document).ready(() => {
+            setTimeout(() => {$('body').focus()} }, 400);
+        })
     </div>
 
     <script src="~/Scripts/navigation.js"></script>

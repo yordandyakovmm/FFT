@@ -1,32 +1,42 @@
 ﻿<div class="container">
-    <div class="theme"  style="padding: 50px 0 ; font-size: 40px; font-weight: 900; height: 100%; width: 100%; display: flex; flex-direction: column; align-items: center;  justify-content: space-between; color: white; background-color:black">
+    <div class="theme" style="padding: 50px 0 ; font-size: 40px; font-weight: 900; height: 100%; width: 100%; display: flex; flex-direction: column; align-items: center;  justify-content: space-between; color: white; background-color:black">
         <div style="width: 100%; display: flex; flex-direction: row;  align-self: flex-start; align-items: center; justify-content: center;  margin: 0">
             <div style="border-top: solid; width: 80%; border-bottom-color: white; border-top-width: 2px;"></div>
         </div>
-        <div style="width: 100%; min-height:200px; display: flex; flex-direction: row; align-self: flex-start; align-items: center; justify-content: space-around;  margin: 0">
+        <div class="convoluteRow">
             <canvas id="c1" data="mouse.png"></canvas>
             <span>*</span>
-            <div class="matrix" id="m1">
-                <div>
-                    <input value="2" />
-                    <input value="2" />
-                    <input value="2" />
+            <div class="matrixWrapper">
+                <div class="multiplayer">
+                    <span style="margin-left: 7px;">1</span>
+                    <span>------</span>
+                    <input id="common1" value="9" />
                 </div>
-                <div>
-                    <input value="2" />
-                    <input value="2" />
-                    <input value="2" />
-                </div>
-                <div>
-                    <input value="2" />
-                    <input value="2" />
-                    <input value="2" />
+                <div class="matrix" id="m1">
+                    <div>
+                        <input value="2" />
+                        <input value="2" />
+                        <input value="2" />
+                    </div>
+                    <div>
+                        <input value="2" />
+                        <input value="2" />
+                        <input value="2" />
+                    </div>
+                    <div>
+                        <input value="2" />
+                        <input value="2" />
+                        <input value="2" />
+                    </div>
                 </div>
             </div>
             <span> = </span>
-            <canvas id="c1-result" style="" onclick="convolute1()"></canvas>
+            <div>
+                <div style="position: absolute; margin-top:  40px; margin-left: 40px; height: 100px; width: 100px;" class="loader"></div>
+                <canvas height="200px" width="200px" id="c1-result" style="cursor: pointer; border: solid 1px white" onclick="convolute1()"></canvas>
+            </div>
         </div>
-       
+
     </div>
 
 
@@ -46,7 +56,8 @@
     var xMatrix = null;
     var yMatrix = null;
     image.src = '/content/mouse.jpg';
-    
+    $('.loader').hide();
+
     //When the image loads
     $(image).load(function () {
         //Resize canvas for image
@@ -60,17 +71,21 @@
         context1.drawImage(image, 0, 0);
     });
 
-    function convolute1()
+    function convolute1() {
+        $('.loader').show();
+        setTimeout(() => { convoluteCompute(1) }, 300);
+    }
+
+    function convoluteCompute(index)
     {
-        value1 = 0;
-        xMatrix = yMatrix = $('#m1 > div').length;
+        xMatrix = yMatrix = $('#m'+index+' > div').length;
         var cer = new Array(xMatrix);
         for (var i = 0; i < xMatrix; i++)
         {
             cer[i] = new Array(yMatrix);
             for (var j = 0; j < xMatrix; j++) {
-                cer[i][j] = parseInt( $($('#m1 > div')[i]).find('input')[j].value );
-                value1 = value1 + cer[i][j];
+                cer[i][j] = parseInt($($('#m' + index + ' > div')[i]).find('input')[j].value);
+                //value1 = value1 + cer[i][j];
             }
         }
         $("#c1-result").attr({
@@ -87,15 +102,15 @@
                         var color = context1.getImageData(i+k, j+m, 1, 1).data[0];
                         //console.log(color);
                         //console.log(cer[k][m]);
-                        pixelData = pixelData + cer[k][m] * color; 
+                        pixelData = pixelData + cer[k][m] * color;
                     }
                 }
-
+                var value1 = parseFloat(document.querySelector('#common'+ index).value);
                 pixelData = pixelData / value1;
 
-                var id = context1_resulr.createImageData(1, 1); 
-                var d = id.data;                        
-                d[0] = pixelData; 
+                var id = context1_resulr.createImageData(1, 1);
+                var d = id.data;
+                d[0] = pixelData;
                 d[1] = pixelData;
                 d[2] = pixelData;
                 d[3] = 255;
@@ -103,10 +118,10 @@
             }
         }
 
-        
+        $('.loader').hide();
 
     }
-    
+
 
 </script>
 <script src="~/Scripts/main.js"></script>
