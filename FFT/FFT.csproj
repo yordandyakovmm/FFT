@@ -43,6 +43,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <ExcludeGeneratedDebugSymbol>false</ExcludeGeneratedDebugSymbol>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -263,7 +264,10 @@
     <Content Include="Content\fourierseries3d.png" />
     <Content Include="Content\gauss.jpg" />
     <Content Include="Content\giphy.gif" />
+    <Content Include="Content\gps.gif" />
+    <Content Include="Content\gps1.gif" />
     <Content Include="Content\Less\input-style.less" />
+    <Content Include="Content\convolution.pdf" />
     <None Include="Content\Less\grid-layout.less" />
     <Content Include="Content\Less\grid-layout - Copy.css">
       <DependentUpon>input-style.less</DependentUpon>
@@ -451,6 +455,10 @@
     <Content Include="Views\Index\data.cshtml" />
     <Content Include="Views\Index\identities.cshtml" />
     <Content Include="Views\Index\sound-speed.cshtml" />
+    <Content Include="Views\Index\gps1.cshtml" />
+    <Content Include="Views\Index\gps2.cshtml" />
+    <Content Include="Views\Index\gps3.cshtml" />
+    <Content Include="Views\Index\feature.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

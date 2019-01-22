@@ -1,0 +1,53 @@
+﻿<div class="container"  >
+    <div class="i1" style="width: 100%;
+                    height: 90%;
+                    width:50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-self: center;
+                    align-items: center;
+                    justify-content: center">
+
+        <img src="~/Content/gps.gif"  width="850px" />
+    </div>
+    <div class="i2" style="width: 100%;
+                    height: 90%;
+                    width:50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-self: center;
+                    align-items: center;
+                    justify-content: center">
+
+        <img src="~/Content/gps1.gif" width="700px" />
+    </div>
+
+
+
+</div>
+<script type="text/javascript">
+    var frward = '/gps3';
+    var backward = '/gps1';
+
+    var index = 1;
+    
+    $('.i1').hide();
+   
+
+    
+    $('body').keyup(function (e) {
+        if (e.keyCode == 32) {
+            index++;
+            if (index == 3) {
+                index = 1;
+            }
+            $('.i1').hide();
+            $('.i2').hide();
+          
+            $('.i' + index).show();
+        }
+    });
+
+
+</script>
+<script src="~/Scripts/main.js"></script>

@@ -16,3 +16,23 @@ input[type="button"]:focus {
   outline: none;
   box-shadow: 0 0 4px #009fe3;
 }
+.iContainer {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-self: flex-start;
+}
+.iContainer > span {
+  display: flex;
+  text-align: left;
+  width: 100%;
+  font-size: 21px !important;
+  margin-top: 0px !important;
+  margin-left: 30px !important;
+}
+.iContainer > span.first {
+  font-size: 27px !important;
+  margin-top: 30px !important;
+  margin-left: 0 !important;
+}

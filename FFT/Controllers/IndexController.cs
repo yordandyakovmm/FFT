@@ -315,6 +315,35 @@ namespace AirHelp.Controllers
             return View("convolution");
         }
 
+
+        [HttpGet]
+        [Route("feature")]
+        public ActionResult feature()
+        {
+            return View("feature");
+        }
+
+        [HttpGet]
+        [Route("gps1")]
+        public ActionResult gps1()
+        {
+            return View("gps1");
+        }
+
+        [HttpGet]
+        [Route("gps2")]
+        public ActionResult gps2()
+        {
+            return View("gps2");
+        }
+
+        [HttpGet]
+        [Route("gps3")]
+        public ActionResult gps3()
+        {
+            return View("gps3");
+        }
+
         [Route("identities")]
         public ActionResult identities(string category)
         {
