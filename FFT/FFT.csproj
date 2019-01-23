@@ -239,6 +239,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\cat.png" />
+    <Content Include="Content\cat1.png" />
     <Content Include="Content\cdma.png" />
     <Content Include="Content\css\grid-layout.css" />
     <Content Include="Content\css\grid-layout.min.css">

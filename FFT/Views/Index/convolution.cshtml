@@ -1,6 +1,6 @@
 ﻿<div class="container">
     <div class="theme" style="padding: 50px 0 ; font-size: 40px; font-weight: 900; height: 100%; width: 100%; display: flex; flex-direction: column; align-items: center;  justify-content: space-between; color: white; background-color:black">
-        <div style="width: 100%; display: flex; flex-direction: row;  align-self: flex-start; align-items: center; justify-content: center;  margin: 0">
+        <div style="width: 100%; display: flex; flex-direction: row;  align-self: flex-start; align-items: center; justify-content: center;  margin: 20px 0">
             <div style="border-top: solid; width: 80%; border-bottom-color: white; border-top-width: 2px;"></div>
         </div>
         <div class="convoluteRow">
@@ -32,9 +32,202 @@
             </div>
             <span> = </span>
             <div>
-                <div style="position: absolute; margin-top:  40px; margin-left: 40px; height: 100px; width: 100px;" class="loader"></div>
+                <div id="l1" style="position: absolute; margin-top:  40px; margin-left: 40px; height: 100px; width: 100px;" class="loader"></div>
                 <canvas height="200px" width="200px" id="c1-result" style="cursor: pointer; border: solid 1px white" onclick="convolute1()"></canvas>
             </div>
+        </div>
+
+        <div style="width: 100%; display: flex; flex-direction: row;  align-self: flex-start; align-items: center; justify-content: center;  margin: 20px 0">
+            <div style="border-top: solid; width: 80%; border-bottom-color: white; border-top-width: 2px;"></div>
+        </div>
+
+        <div class="convoluteRow">
+            <canvas id="c2" data="mouse.png"></canvas>
+            <span>*</span>
+            <div class="matrixWrapper">
+                <div class="multiplayer">
+                    <span style="margin-left: 7px;">1</span>
+                    <span>------</span>
+                    <input id="common2" value="1" />
+                </div>
+                <div class="matrix" id="m2">
+                    <div>
+                        <input value="1" />
+                        <input value="1" />
+                        <input value="1" />
+                        <input value="1" />
+                        <input value="1" />
+                        <input value="1" />
+                    </div>
+                    <div>
+                        <input value="-1" />
+                        <input value="-1" />
+                        <input value="-1" />
+                        <input value="-1" />
+                        <input value="-1" />
+                        <input value="-1" />
+                    </div>
+                    <div>
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+                    </div>
+                    <div>
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+                    </div>
+                    <div>
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+                    </div>
+                    <div>
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+                    </div>
+                </div>
+            </div>
+            <span> = </span>
+            <div>
+                <div id="l2" style="position: absolute; margin-top:  40px; margin-left: 40px; height: 100px; width: 100px;" class="loader"></div>
+                <canvas height="200px" width="200px" id="c2-result" style="cursor: pointer; border: solid 1px white" onclick="convolute2()"></canvas>
+            </div>
+        </div>
+
+        <div style="width: 100%; display: flex; flex-direction: row;  align-self: flex-start; align-items: center; justify-content: center;  margin: 20px 0">
+            <div style="border-top: solid; width: 80%; border-bottom-color: white; border-top-width: 2px;"></div>
+        </div>
+
+        <div class="convoluteRow">
+            <div id="l3" style="position: absolute; margin-top:  40px; margin-left: 40px; height: 100px; width: 100px;" class="loader"></div>
+            <canvas style="cursor: pointer" onclick="show()" id="c3" data="cat.png" width="200px" height="300px"></canvas>
+            <span>*</span>
+            <div class="matrixWrapper">
+                <div class="matrix" id="m3">
+                    <div>
+                        <input value="1" />
+                        <input value="-1" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+
+                    </div>
+                    <div>
+                        <input value="1" />
+                        <input value="-1" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+
+                    </div>
+                    <div>
+                        <input value="1" />
+                        <input value="-1" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+
+                    </div>
+                    <div>
+                        <input value="1" />
+                        <input value="-1" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+
+                    </div>
+                    <div>
+                        <input value="1" />
+                        <input value="-1" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+
+                    </div>
+
+                </div>
+            </div>
+            <span> = </span>
+            <div>
+
+                <img src="~/Content/cat1.png"></img>
+            </div>
+        </div>
+
+        <div style="width: 100%; display: flex; flex-direction: row;  align-self: flex-start; align-items: center; justify-content: center;  margin: 20px 0">
+            <div style="border-top: solid; width: 80%; border-bottom-color: white; border-top-width: 2px;"></div>
+        </div>
+
+        <div class="convoluteRow">
+
+            <img src="~/Content/cat.png" />
+            <span>*</span>
+            <div class="matrixWrapper">
+                <div id="l4" style="z-index: 30000; position: absolute; margin-top:  40px; margin-left: 40px; height: 100px; width: 100px;" class="loader"></div>
+                <div class="matrix" id="m4" onclick="show1()" style="cursor: pointer">
+                    <div>
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+
+                    </div>
+                    <div>
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+
+                    </div>
+                    <div>
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+
+                    </div>
+                    <div>
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+
+                    </div>
+                    <div>
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+                        <input value="0" />
+
+                    </div>
+
+                </div>
+            </div>
+            <span> = </span>
+            <div>
+
+                <img src="~/Content/cat1.png"></img>
+            </div>
+
         </div>
 
     </div>
@@ -50,13 +243,51 @@
     var context1 = canvas1.getContext('2d');
     var canvas1_result = document.getElementById('c1-result');
     var context1_resulr = canvas1_result.getContext('2d');
+
+    var canvas2 = document.getElementById('c2');
+    var context2 = canvas2.getContext('2d');
+    var canvas2_result = document.getElementById('c2-result');
+    var context2_resulr = canvas2_result.getContext('2d');
+
     var value1 = 0;
-    var x = null;
-    var y = null;
+    var x = [];
+    var y = [];
     var xMatrix = null;
     var yMatrix = null;
     image.src = '/content/mouse.jpg';
     $('.loader').hide();
+
+
+    function show() {
+        $('#l3').show();
+        var image1 = new Image();
+        var canvas3 = document.getElementById('c3');
+        var context3 = canvas3.getContext('2d');
+        image1.src = '/content/cat.png';
+
+        $(image1).load(function () {
+            //Resize canvas for image
+            $("#c3").attr({
+                width: image1.width,
+                height: image1.height
+            });
+
+            setTimeout(() => {
+                context3.drawImage(image1, 0, 0);
+                $('#l3').hide();
+            }, 200);
+
+        });
+
+    }
+
+    function show1() {
+        $('#l4').show();
+        setTimeout(() => {
+            $("#m4").html($("#m3").html());
+            $('#l4').hide();
+        }, 200);
+    }
 
     //When the image loads
     $(image).load(function () {
@@ -65,31 +296,37 @@
             width: image.width,
             height: image.height
         });
-        x = image.width;
-        y = image.height;
+        $("#c2").attr({
+            width: image.width,
+            height: image.height
+        });
+        x[2] = x[1] = image.width;
+        y[2] = y[1] = image.height;
 
         context1.drawImage(image, 0, 0);
+        context2.drawImage(image, 0, 0);
     });
 
     function convolute1() {
-        $('.loader').show();
+        $('#l1').show();
         setTimeout(() => { convoluteCompute(1) }, 300);
     }
-
-    function convoluteCompute(index)
-    {
-        xMatrix = yMatrix = $('#m'+index+' > div').length;
+    function convolute2() {
+        $('#l2').show();
+        setTimeout(() => { convoluteCompute(2) }, 300);
+    }
+    function convoluteCompute(index) {
+        xMatrix = yMatrix = $('#m' + index + ' > div').length;
         var cer = new Array(xMatrix);
-        for (var i = 0; i < xMatrix; i++)
-        {
+        for (var i = 0; i < xMatrix; i++) {
             cer[i] = new Array(yMatrix);
             for (var j = 0; j < xMatrix; j++) {
                 cer[i][j] = parseInt($($('#m' + index + ' > div')[i]).find('input')[j].value);
                 //value1 = value1 + cer[i][j];
             }
         }
-        $("#c1-result").attr({
-            width: image.width - xMatrix ,
+        $("#c" + index + "-result").attr({
+            width: image.width - xMatrix,
             height: image.height - yMatrix
         });
 
@@ -99,26 +336,33 @@
                 var pixelData = 0;
                 for (var k = 0; k < xMatrix; k++) {
                     for (var m = 0; m < yMatrix; m++) {
-                        var color = context1.getImageData(i+k, j+m, 1, 1).data[0];
+                        var color = index == 1
+                            ? context1.getImageData(i + k, j + m, 1, 1).data[0]
+                            : context2.getImageData(i + k, j + m, 1, 1).data[0];
                         //console.log(color);
                         //console.log(cer[k][m]);
                         pixelData = pixelData + cer[k][m] * color;
                     }
                 }
-                var value1 = parseFloat(document.querySelector('#common'+ index).value);
+                var value1 = parseFloat(document.querySelector('#common' + index).value);
                 pixelData = pixelData / value1;
 
-                var id = context1_resulr.createImageData(1, 1);
+                var id = (index == 1
+                    ? context1_resulr.createImageData(1, 1)
+                    : context2_resulr.createImageData(1, 1));
                 var d = id.data;
                 d[0] = pixelData;
                 d[1] = pixelData;
                 d[2] = pixelData;
                 d[3] = 255;
-                context1_resulr.putImageData(id, i, j);
+                if (index == 1)
+                    context1_resulr.putImageData(id, i, j)
+                else
+                    context2_resulr.putImageData(id, i, j);
             }
         }
 
-        $('.loader').hide();
+        $('#l' + index).hide();
 
     }
 
