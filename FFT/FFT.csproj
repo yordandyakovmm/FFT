@@ -461,6 +461,8 @@
     <Content Include="Views\Index\gps2.cshtml" />
     <Content Include="Views\Index\gps3.cshtml" />
     <Content Include="Views\Index\feature.cshtml" />
+    <Content Include="Views\Index\mony.cshtml" />
+    <Content Include="Views\Index\qft.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

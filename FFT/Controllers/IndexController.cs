@@ -362,12 +362,23 @@ namespace AirHelp.Controllers
             return View("jpg");
         }
 
+        [Route("mony")]
+        public ActionResult mony(string category)
+        {
+            return View("mony");
+        }
+
         [Route("sound-speed")]
         public ActionResult soundspeed(string category)
         {
             return View("sound-speed");
         }
 
+        [Route("qft")]
+        public ActionResult qft(string category)
+        {
+            return View("qft");
+        }
         private Complex ParceCom(string comlex)
         {
 

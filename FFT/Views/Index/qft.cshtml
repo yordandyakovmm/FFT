@@ -1,0 +1,130 @@
+﻿<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<div class="container">
+    <div style="width: 100%; height: 15%; display: flex; flex-direction: row; align-self: center; align-items: center; justify-content: space-around; font-size: 60px; font-weight: 900;   margin: 0">
+        <span>QFT</span>
+
+    </div>
+    <div style="width: 100%; height: 85%; display: flex; flex-direction: column; align-self: flex-start; align-items: center; justify-content: flex-start;  margin: 0">
+        <div id="i1" style="width: 100%;
+                    height: 90%;
+                    width:50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-self: center;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0">
+
+            <span style="font-size: 35px; margin-top: -10px; margin-left: -190px;">
+                $$ F_{n} = \frac{1} {\sqrt{n}} \begin{bmatrix}
+                1 & 1 & 1 & 1 & 1 & . & .\\
+                1 & \omega & {\omega}^2 & {\omega}^3 & {\omega}^4 & . & . \\
+                1 & {\omega}^2 & {\omega}^4 & {\omega}^6 & {\omega}^8  & . & . \\
+                1 & {\omega}^3 & {\omega}^6 & {\omega}^9 & {\omega}^{12}  & . & . \\
+                1 & {\omega}^4 & {\omega}^8 & {\omega}^{12} & {\omega}^{16}  & . & .  \\
+                . & . & . & . & .  & . & .  \\
+                . & . & . & . & .  & . & .
+                \end{bmatrix}  $$
+            </span>
+
+            <span style="font-size: 50px; margin-top: 120px;">
+                $${\omega} = \sqrt[n]{1} \neq 1 $$
+            </span>
+
+        </div>
+        <div id="i2" style="width: 100%;
+                    height: 90%;
+                    width:50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-self: center;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0">
+
+            <span style="font-size: 45px; margin-top: -10px; margin-left: -190px;">
+                $$ F_{4} = \frac{1} {2} \begin{bmatrix}
+                1 & 1 & 1 & 1 \\
+                1 & i & -1 & -i \\
+                1 & -1 & 1 & -1 \\
+                1 & -i & -1 & i
+                \end{bmatrix}  $$
+            </span>
+
+        </div>
+
+        <div id="i3" style="width: 100%;
+                    height: 90%;
+                    width:50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-self: center;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0">
+
+            <span style="font-size: 45px; margin-top: -10px; margin-left: -190px;">
+                $$
+                \color{red}{\begin{bmatrix}
+                1\\
+                0\\
+                0\\
+                0
+                \end{bmatrix}}
+
+                \begin{bmatrix}
+                \frac{1}{2} & \frac{1}{2} & \frac{1}{2} & \frac{1}{2} \\
+                \frac{1}{2} & \frac{i}{2} & \frac{-1}{2} & \frac{-i}{2} \\
+                \frac{1}{2} & \frac{-1}{2} & \frac{1}{2} & \frac{-1}{2} \\
+                \frac{1}{2} & \frac{-i}{2} & \frac{-1}{2} & \frac{i}{2}
+                \end{bmatrix}
+                =
+                \color{yellow}{\begin{bmatrix}
+                1\\
+                i\\
+                0\\
+                0
+                \end{bmatrix}} $$
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+<script type="text/javascript">
+    var frward = '/qft';
+    var backward = '/feature';
+    var index = 0;
+    $('#i1').hide();
+    $('#i2').hide();
+    $('#i3').hide();
+
+    $('body').keyup(function (e) {
+
+        $('#i1').hide();
+        $('#i2').hide();
+        $('#i3').hide();
+
+        if (e.keyCode == 32) {
+            index++;
+            if (index == 4) {
+                index = 1;
+            }
+            $('#i' + index).show();
+        }
+    });
+
+
+</script>
+<script src="~/Scripts/main.js"></script>

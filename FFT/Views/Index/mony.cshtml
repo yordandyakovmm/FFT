@@ -1,0 +1,117 @@
+﻿<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<div class="container">
+
+    <div style="padding-left:100px; width: 100%; height: 85%; display: flex; flex-direction: row; align-self: flex-start; align-items: flex-start; justify-content: flex-start;  margin: 0">
+
+        <div  style="width: 50%; height: auto; display: flex; flex-direction: column; align-self: flex-start; align-items: flex-start; justify-content: flex-start;  margin: 0">
+            <div class="grid">
+                <div class="heder">
+                    <div class="textbox">
+                        <label>Weigth</label>
+                        <input type="text" id="mony" value="">
+                    </div>
+
+                </div>
+            </div>
+            <div id="result" style="display: flex; flex-direction: column">
+
+
+
+            </div>
+        </div>
+        <div style="width: 50%; height: auto; display: flex; flex-direction: column; align-self: flex-start; align-items: flex-start; justify-content: flex-start;  margin: 0">
+            <div class="grid" style="display:flex; flex-direction: row; justify-content: flex-start; align-items: flex-start">
+                <div class="heder" style="min-width: 200px" >
+                    <div class="textbox">
+                        <label>Weigth</label>
+                        <input type="text" id="mony1" value="">
+                    </div>
+
+                </div>
+                <div class="heder"  style="min-width: 200px">
+                    <div class="textbox">
+                        <label>Price</label>
+                        <input type="text" id="diverence" value="">
+                    </div>
+
+                </div>
+
+            </div>
+            <div id="result2" style="display: flex; flex-direction: column">
+
+
+
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+<script type="text/javascript">
+
+    var weigth = [7, 5, 4, 3]
+
+    var arrResut = [];
+    var initialValue = null;
+
+    $('#mony').keyup(function (e) {
+        if (e.keyCode == 13) {
+            $('#result').html('')
+            arrResut = [];
+            initialValue = parseInt(this.value);
+            calc(parseInt(this.value), 0, [0, 0, 0, 0])
+        }
+    });
+
+    function div(n, d) {
+        return (n - n % d) / (d);
+    }
+
+    function calc(value, index, res) {
+        console.log(value, index, res);
+       
+        var result = res.slice();
+        // result
+        if (value == 0) {
+            
+            arrResut.push(result);
+            return;
+        }
+
+        if (value < weigth[index] || index > 3) {
+            if (index >= 3) {
+                // exit no result
+                return;
+            }
+
+            calc(value, ++index, result);
+            return;
+        }
+
+        var holePart = div(value, weigth[index]);
+
+        while (holePart >= 0) {
+            result[index] = holePart;
+            calc(value - result[index] * weigth[index], index+1, result.slice());
+            holePart--;
+        }
+
+        if (index == 0 && initialValue == value) {
+            var htmlLresult = '';
+            for (var k = 0; k <= Math.min(30, arrResut.length); k++) {
+                total = arrResut[k][0] + arrResut[k][1] * 0.5 + arrResut[k][2] * 0.2 + arrResut[k][3] * 0.1;
+                htmlLresult += '<span> <b> всичко: ' + total.toFixed(2) + ' </b>: --- ' + arrResut[k][0] + 'x1лв, ' + arrResut[k][1] + 'x50ст, ' + arrResut[k][2] + 'x20ст, ' + arrResut[k][3] + 'x10ст</span>';
+            }
+            $('#result').html(htmlLresult);
+        }
+    }
+
+</script>
+<script src="~/Scripts/main.js"></script>
