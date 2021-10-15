@@ -1,72 +1,22 @@
-﻿using Facebook;
-using Newtonsoft.Json.Linq;
-using AirHelp.DAL;
-using AirHelp.Models;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.IO;
+﻿using System;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Security;
-using System.Threading;
-using System.Security.Cryptography;
-using System.Threading.Tasks;
-using System.Web.Script.Serialization;
-using System.Device.Location;
-using AForge.Math;
+using Math.FFT;
+using Microsoft.AspNetCore.Mvc;
 
-namespace AirHelp.Controllers
+namespace FFT.Controllers
 {
-
-
-    public class IndexController : BaseController
+    public class IndexController: Controller
     {
 
-        [Route("")]
+        [HttpGet("")]
         public ActionResult Index()
         {
-
-            var json = Request.Form["data"];
-
-
-
-            Complex c1 = new Complex(3, 9);
-            Complex c2 = new Complex(8, 3);
-            // sum
-            Complex s1 = Complex.Add(c1, c2);
-            Complex s2 = c1 + c2;
-            Complex s3 = c1 + 5;
-            // difference
-            Complex d1 = Complex.Subtract(c1, c2);
-            Complex d2 = c1 - c2;
-            Complex d3 = c1 - 2;
-
-            Complex[] data = new Complex[] {
-                new Complex(3, 0),
-                new Complex(5, 0),
-                new Complex(-2, 0),
-                new Complex(8, 0),
-                new Complex(-1, 0),
-                new Complex(2, 0)
-        };
-
-            FourierTransform.DFT(data, FourierTransform.Direction.Forward);
-
-            FourierTransform.DFT(data, FourierTransform.Direction.Backward);
-
-
             return View("Index");
 
         }
 
 
-        [Route("fft")]
+        [HttpPost("fft")]
         public ActionResult fft(string[] json)
         {
 
@@ -89,11 +39,11 @@ namespace AirHelp.Controllers
             };
 
 
-            return Json(result, JsonRequestBehavior.AllowGet);
+            return Json(result);
 
         }
 
-        [Route("fft1")]
+        [HttpPost("fft1")]
         public ActionResult fft1(string[] json)
         {
 
@@ -116,7 +66,7 @@ namespace AirHelp.Controllers
             };
 
 
-            return Json(result, JsonRequestBehavior.AllowGet);
+            return Json(result);
 
         }
 
@@ -125,7 +75,7 @@ namespace AirHelp.Controllers
             public Double Im { get; set; }
         }
 
-        [Route("fftC")]
+        [HttpPost("fftC")]
         public ActionResult fftC(Data[] json)
         {
 
@@ -141,11 +91,19 @@ namespace AirHelp.Controllers
 
             FourierTransform.DFT(data, FourierTransform.Direction.Forward);
 
-            return Json(data, JsonRequestBehavior.AllowGet);
+            var result = data.ToList().Select(s => new
+            {
+                Im = s.Im,
+                Re = s.Re,
+                Magnitude = s.Magnitude
+            }).ToArray();
+
+
+            return new OkObjectResult(result);
 
         }
 
-        [Route("fftC1")]
+        [HttpPost("fftC1")]
         public ActionResult fftC1(Data[] json)
         {
 
@@ -157,224 +115,204 @@ namespace AirHelp.Controllers
                 data[i] = com;
             }
 
-
-
             FourierTransform.DFT(data, FourierTransform.Direction.Backward);
 
-            return Json(data, JsonRequestBehavior.AllowGet);
+            var result = data.ToList().Select(s => new
+            {
+                Im = s.Im,
+                Re = s.Re,
+                Magnitude = s.Magnitude
+            }).ToArray();
+
+            return new OkObjectResult(result);
 
         }
 
 
-        [HttpGet]
-        [Route("agenda")]
+        [HttpGet("agenda")]
         public ActionResult Agenda()
         {
             return View("Agenda");
         }
 
 
-        [HttpGet]
-        [Route("foundament")]
+        [HttpGet("foundament")]
         public ActionResult foundament()
         {
             return View("foundament");
         }
 
-        [HttpGet]
-        [Route("fftDemo")]
+        [HttpGet("fftDemo")]
         public ActionResult fftDemo()
         {
             return View("fft");
         }
 
-        [HttpGet]
-        [Route("dft")]
+        [HttpGet("dft")]
         public ActionResult Dft()
         {
             return View("dft");
         }
 
-        [HttpGet]
-        [Route("dft1")]
+        [HttpGet("dft1")]
         public ActionResult Dft1()
         {
             return View("dft1");
         }
 
-        [HttpGet]
-        [Route("dft2")]
+        [HttpGet("dft2")]
         public ActionResult Dft2()
         {
             return View("dft2");
         }
 
-        [HttpGet]
-        [Route("eart")]
+        [HttpGet("eart")]
         public ActionResult eart()
         {
             return View("eart");
         }
 
-        [HttpGet]
-        [Route("eart1")]
+        [HttpGet("eart1")]
         public ActionResult eart1()
         {
             return View("eart1");
         }
 
-        [HttpGet]
-        [Route("fourie")]
+        [HttpGet("fourie")]
         public ActionResult fourie()
         {
             return View("fourie");
         }
 
-        [HttpGet]
-        [Route("18")]
+        [HttpGet("18")]
         public ActionResult a18()
         {
             return View("18");
         }
 
-        [HttpGet]
-        [Route("19")]
+        [HttpGet("19")]
         public ActionResult a19()
         {
             return View("19");
         }
 
-        [HttpGet]
-        [Route("dmachine")]
+        [HttpGet("dmachine")]
         public ActionResult dmachine()
         {
             return View("dmachine");
         }
 
 
-        [HttpGet]
-        [Route("gaus")]
+        [HttpGet("gaus")]
         public ActionResult gaus()
         {
             return View("gaus");
         }
 
-        [HttpGet]
-        [Route("fTransform")]
+        [HttpGet("fTransform")]
         public ActionResult fTransform()
         {
             return View("fTransform");
         }
 
-        [HttpGet]
-        [Route("dfunction")]
+        [HttpGet("dfunction")]
         public ActionResult dfunction()
         {
             return View("dfunction");
         }
 
-        [HttpGet]
-        [Route("dft-formula")]
+        [HttpGet("dft-formula")]
         public ActionResult dftformula()
         {
             return View("dft-formula");
         }
 
-        [HttpGet]
-        [Route("fftd")]
+        [HttpGet("fftd")]
         public ActionResult fftd()
         {
             return View("fftd");
         }
 
-        [HttpGet]
-        [Route("fft-formula")]
+        [HttpGet("fft-formula")]
         public ActionResult fftformula()
         {
             return View("fft-formula");
         }
 
-        [HttpGet]
-        [Route("mp3")]
+        [HttpGet("mp3")]
         public ActionResult mp3()
         {
             return View("mp3");
         }
 
-        [HttpGet]
-        [Route("logo")]
+        [HttpGet("logo")]
         public ActionResult logo()
         {
             return View("logo");
         }
 
-        [HttpGet]
-        [Route("convolution")]
+        [HttpGet("convolution")]
         public ActionResult com()
         {
             return View("convolution");
         }
 
 
-        [HttpGet]
-        [Route("feature")]
+        [HttpGet("feature")]
         public ActionResult feature()
         {
             return View("feature");
         }
 
-        [HttpGet]
-        [Route("gps1")]
+        [HttpGet("gps1")]
         public ActionResult gps1()
         {
             return View("gps1");
         }
 
-        [HttpGet]
-        [Route("gps2")]
+        [HttpGet("gps2")]
         public ActionResult gps2()
         {
             return View("gps2");
         }
 
-        [HttpGet]
-        [Route("gps3")]
+        [HttpGet("gps3")]
         public ActionResult gps3()
         {
             return View("gps3");
         }
 
-        [Route("identities")]
+        [HttpGet("identities")]
         public ActionResult identities(string category)
         {
             return View("identities");
         }
 
-        [Route("data")]
+        [HttpGet("data")]
         public ActionResult data(string category)
         {
             return View("data");
         }
 
-        [Route("jpg")]
+        [HttpGet("jpg")]
         public ActionResult jpg(string category)
         {
             return View("jpg");
         }
 
-        [Route("mony")]
+        [HttpGet("mony")]
         public ActionResult mony(string category)
         {
             return View("mony");
         }
 
-        [Route("sound-speed")]
+        [HttpGet("sound-speed")]
         public ActionResult soundspeed(string category)
         {
             return View("sound-speed");
         }
 
-        [Route("qft")]
+        [HttpGet("qft")]
         public ActionResult qft(string category)
         {
             return View("qft");

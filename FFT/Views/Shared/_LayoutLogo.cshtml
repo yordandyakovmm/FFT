@@ -1,5 +1,4 @@
-﻿@using AirHelp.Models
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -24,9 +23,6 @@
 <body>
     <div class="main-layout">
         @RenderBody()
-        $(document).ready(() => {
-            setTimeout(() => {$('body').focus()} }, 400);
-        })
     </div>
 
     <script src="~/Scripts/navigation.js"></script>
